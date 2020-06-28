@@ -79,6 +79,7 @@
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(303, 62);
             this.UsernameTextBox.TabIndex = 2;
+            this.UsernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameTextBox_Enter);
             // 
             // PasswordTextBox
             // 
@@ -88,6 +89,7 @@
             this.PasswordTextBox.Size = new System.Drawing.Size(303, 62);
             this.PasswordTextBox.TabIndex = 4;
             this.PasswordTextBox.UseSystemPasswordChar = true;
+            this.PasswordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PasswordTextBox_Enter);
             // 
             // pictureBox2
             // 
