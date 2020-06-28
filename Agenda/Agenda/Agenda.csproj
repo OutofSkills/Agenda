@@ -93,6 +93,9 @@
     <Compile Include="WrongCredentials.Designer.cs">
       <DependentUpon>WrongCredentials.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgendaMenu.resx">
+      <DependentUpon>AgendaMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
