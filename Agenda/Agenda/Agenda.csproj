@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendaMenu.Designer.cs">
+      <DependentUpon>AgendaMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +87,12 @@
     <Compile Include="USER.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="WrongCredentials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WrongCredentials.Designer.cs">
+      <DependentUpon>WrongCredentials.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WrongCredentials.resx">
+      <DependentUpon>WrongCredentials.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="DB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DB.Designer.cs</LastGenOutput>
