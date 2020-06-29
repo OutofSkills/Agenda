@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Agenda
+namespace AgendaEvents
 {
     using System;
     using System.Data.Entity;
@@ -25,6 +25,7 @@ namespace Agenda
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<USER> USER { get; set; }
     }
 }

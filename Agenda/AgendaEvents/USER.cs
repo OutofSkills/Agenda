@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Agenda
+namespace AgendaEvents
 {
     using System;
     using System.Collections.Generic;

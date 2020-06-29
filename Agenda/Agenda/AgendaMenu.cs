@@ -25,5 +25,15 @@ namespace Agenda
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            TimerLabel.Text = DateTime.Now.ToString();
+        }
+
+        private void AgendaMenu_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }

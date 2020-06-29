@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AgendaEvents;
 namespace Agenda
 {
     public partial class LoginForm : Form
@@ -28,7 +21,9 @@ namespace Agenda
         /// <param name="e"></param>
         private void SignInButton_Click(object sender, EventArgs e)
         {
-            if(ValidateUser())
+            UserSecurity security = new UserSecurity();
+  
+            if (security.ValidateUser(UsernameTextBox.Text, PasswordTextBox.Text))
             {
                 AgendaMenu menu = new AgendaMenu();
                 menu.Show();
@@ -40,34 +35,7 @@ namespace Agenda
                 errorWindow.Show();
             }    
         }
-
-        /// <summary>
-        /// Comparing user data from database with the user provided data
-        /// </summary>
-        /// <returns></returns>
-        private bool ValidateUser()
-        {
-            AgendaDBEntities db = new AgendaDBEntities();
-
-            if (UsernameTextBox.Text != string.Empty || PasswordTextBox.Text != string.Empty)
-            {
-                var user = db.USER.Where(u => u.Username.Equals(UsernameTextBox.Text)).FirstOrDefault();
-
-                if(user!= null)
-                {
-                    if(user.Password.Equals(PasswordTextBox.Text))
-                    {
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                return false;
-            }
-
-            return false;
-        }
+        
         #endregion
 
         #region tools
