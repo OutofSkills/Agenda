@@ -32,6 +32,7 @@ namespace Agenda
             {
                 AgendaMenu menu = new AgendaMenu();
                 menu.Show();
+                this.Visible = false;
             }
             else
             {
