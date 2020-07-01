@@ -28,19 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.CreateButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DisplayButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.MoveMenuPanel = new System.Windows.Forms.Panel();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.TimerLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.MoveMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,15 +93,17 @@
             this.DisplayButton.Text = "Display Event";
             this.DisplayButton.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // MoveMenuPanel
             // 
-            this.panel2.Controls.Add(this.MinimizeButton);
-            this.panel2.Controls.Add(this.ExitButton);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(253, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(547, 35);
-            this.panel2.TabIndex = 1;
+            this.MoveMenuPanel.Controls.Add(this.MinimizeButton);
+            this.MoveMenuPanel.Controls.Add(this.ExitButton);
+            this.MoveMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.MoveMenuPanel.Location = new System.Drawing.Point(253, 0);
+            this.MoveMenuPanel.Name = "MoveMenuPanel";
+            this.MoveMenuPanel.Size = new System.Drawing.Size(547, 35);
+            this.MoveMenuPanel.TabIndex = 1;
+            this.MoveMenuPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AgendaMenu_MouseDown);
+            this.MoveMenuPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AgendaMenu_MouseMove);
             // 
             // MinimizeButton
             // 
@@ -128,36 +127,20 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // TimerLabel
-            // 
-            this.TimerLabel.AutoSize = true;
-            this.TimerLabel.Location = new System.Drawing.Point(358, 211);
-            this.TimerLabel.Name = "TimerLabel";
-            this.TimerLabel.Size = new System.Drawing.Size(46, 17);
-            this.TimerLabel.TabIndex = 2;
-            this.TimerLabel.Text = "label1";
-            // 
             // AgendaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TimerLabel);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.MoveMenuPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgendaMenu";
             this.Text = "AgendaMenu";
-            this.Load += new System.EventHandler(this.AgendaMenu_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.MoveMenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -168,10 +151,8 @@
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button DisplayButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel MoveMenuPanel;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label TimerLabel;
     }
 }
