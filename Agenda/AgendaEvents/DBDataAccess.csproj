@@ -69,7 +69,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
+    <Compile Include="Event.cs">
       <DependentUpon>DB.tt</DependentUpon>
     </Compile>
     <Compile Include="IEvent.cs" />

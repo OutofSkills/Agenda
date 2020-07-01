@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AgendaEvents;
+using System;
+using System.Collections.Generic;
 
 namespace DBDataAccess
 {
@@ -6,7 +8,7 @@ namespace DBDataAccess
     {
         void CreateEvent(string name, DateTime date, DateTime time, string description);
         void DeleteEvent(DateTime date, DateTime time);
-        void DisplayEvents(DateTime date, DateTime time);
+        List<Event> DisplayEvents(DateTime date, string dayOrWeek);
         void UpdateEvent(string name, DateTime date, DateTime time, string description);
     }
 }

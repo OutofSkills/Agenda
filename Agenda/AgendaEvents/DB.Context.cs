@@ -25,7 +25,7 @@ namespace AgendaEvents
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<USER> USER { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
     }
 }
