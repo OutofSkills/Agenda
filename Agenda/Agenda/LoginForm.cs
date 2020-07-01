@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using AgendaEvents;
+using Security;
 namespace Agenda
 {
     public partial class LoginForm : Form
