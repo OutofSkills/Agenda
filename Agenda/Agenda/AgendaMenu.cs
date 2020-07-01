@@ -26,14 +26,20 @@ namespace Agenda
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+
+        Point lastPoint;
+        private void AgendaMenu_MouseMove(object sender, MouseEventArgs e)
         {
-            TimerLabel.Text = DateTime.Now.ToString();
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
         }
 
-        private void AgendaMenu_Load(object sender, EventArgs e)
+        private void AgendaMenu_MouseDown(object sender, MouseEventArgs e)
         {
-            timer1.Start();
+            lastPoint = new Point(e.X, e.Y);
         }
     }
 }
