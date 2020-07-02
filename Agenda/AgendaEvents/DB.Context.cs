@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Security
+namespace AgendaEvents
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AgendaDBEntities : DbContext
+    public partial class AgendaEntities : DbContext
     {
-        public AgendaDBEntities()
-            : base("name=AgendaDBEntities")
+        public AgendaEntities()
+            : base("name=AgendaEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace Security
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<USER> USER { get; set; }
         public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<USER> USER { get; set; }
     }
 }

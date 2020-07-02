@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Security
+namespace AgendaEvents
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,7 @@ namespace Security
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public string Description { get; set; }
         public Nullable<System.TimeSpan> Time { get; set; }
+        public string Description { get; set; }
     }
 }

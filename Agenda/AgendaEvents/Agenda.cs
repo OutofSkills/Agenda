@@ -1,9 +1,9 @@
-﻿using Security;
+﻿using AgendaEvents;
+using Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DBDataAccess
 {
@@ -11,7 +11,7 @@ namespace DBDataAccess
     {
         public void CreateEvent(string name, DateTime date, DateTime time, string description)
         {
-            using (var context = new AgendaDBEntities())
+            using (var context = new AgendaEntities())
             {
                 var evnt = new Event()
                 {
@@ -29,7 +29,7 @@ namespace DBDataAccess
         public List<Event> DisplayEvents(DateTime date, string dayOrWeek)
         {
             List<Event> events = null;
-            AgendaDBEntities context = new AgendaDBEntities();
+            AgendaEntities context = new AgendaEntities();
 
             if (dayOrWeek.ToLower() == "day")
             {
@@ -45,7 +45,7 @@ namespace DBDataAccess
 
         public void UpdateEvent(string name, DateTime date, DateTime time, string description)
         {
-            using (var context = new AgendaDBEntities())
+            using (var context = new AgendaEntities())
             {
                 var evnt = new Event()
                 {
@@ -60,7 +60,7 @@ namespace DBDataAccess
        
         public void DeleteEvent(DateTime date, DateTime time)
         {
-            AgendaDBEntities context = new AgendaDBEntities();
+            AgendaEntities context = new AgendaEntities();
 
             var eventToRemove = context.Events.Where(e => e.Date == date.Date && e.Time == time.TimeOfDay).FirstOrDefault();
 

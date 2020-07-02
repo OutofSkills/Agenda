@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendaEvents;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,7 @@ namespace Security
         {
             public bool ValidateUser(string username, string password)
             {
-                AgendaDBEntities db = new AgendaDBEntities();
+                AgendaEntities db = new AgendaEntities();
 
                 if (username != string.Empty || password != string.Empty)
                 {
