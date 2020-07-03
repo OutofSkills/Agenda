@@ -30,7 +30,7 @@ namespace DBDataAccess
         {
             List<Event> events = null;
             AgendaEntities context = new AgendaEntities();
-
+            //er;gjerigue
             if (dayOrWeek.ToLower() == "day")
             {
                events = context.Events.Where(e => e.Date == date.Date).ToList();
