@@ -36,6 +36,7 @@
             this.MoveMenuPanel = new System.Windows.Forms.Panel();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.MoveMenuPanel.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(253, 450);
+            this.panel1.Size = new System.Drawing.Size(253, 449);
             this.panel1.TabIndex = 0;
             // 
             // DeleteButton
@@ -62,6 +63,7 @@
             this.DeleteButton.TabIndex = 3;
             this.DeleteButton.Text = "Delete Event";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // CreateButton
             // 
@@ -72,6 +74,7 @@
             this.CreateButton.TabIndex = 1;
             this.CreateButton.Text = "Create Event";
             this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // UpdateButton
             // 
@@ -82,6 +85,7 @@
             this.UpdateButton.TabIndex = 2;
             this.UpdateButton.Text = "Update Event";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DisplayButton
             // 
@@ -92,6 +96,7 @@
             this.DisplayButton.TabIndex = 1;
             this.DisplayButton.Text = "Display Event";
             this.DisplayButton.UseVisualStyleBackColor = true;
+            this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
             // 
             // MoveMenuPanel
             // 
@@ -100,7 +105,7 @@
             this.MoveMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MoveMenuPanel.Location = new System.Drawing.Point(253, 0);
             this.MoveMenuPanel.Name = "MoveMenuPanel";
-            this.MoveMenuPanel.Size = new System.Drawing.Size(547, 35);
+            this.MoveMenuPanel.Size = new System.Drawing.Size(542, 35);
             this.MoveMenuPanel.TabIndex = 1;
             this.MoveMenuPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AgendaMenu_MouseDown);
             this.MoveMenuPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AgendaMenu_MouseMove);
@@ -108,7 +113,7 @@
             // MinimizeButton
             // 
             this.MinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MinimizeButton.Location = new System.Drawing.Point(463, 0);
+            this.MinimizeButton.Location = new System.Drawing.Point(458, 0);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(42, 35);
             this.MinimizeButton.TabIndex = 1;
@@ -119,7 +124,7 @@
             // ExitButton
             // 
             this.ExitButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ExitButton.Location = new System.Drawing.Point(505, 0);
+            this.ExitButton.Location = new System.Drawing.Point(500, 0);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(42, 35);
             this.ExitButton.TabIndex = 0;
@@ -127,12 +132,22 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(253, 35);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(542, 414);
+            this.panelChildForm.TabIndex = 2;
+            // 
             // AgendaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(795, 449);
+            this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.MoveMenuPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -154,5 +169,6 @@
         private System.Windows.Forms.Panel MoveMenuPanel;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Panel panelChildForm;
     }
 }
