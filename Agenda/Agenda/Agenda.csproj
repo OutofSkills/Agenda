@@ -98,6 +98,12 @@
     <Compile Include="UpdateEventForm.Designer.cs">
       <DependentUpon>UpdateEventForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WrongCredentials.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WrongCredentials.resx">
       <DependentUpon>WrongCredentials.cs</DependentUpon>
     </EmbeddedResource>

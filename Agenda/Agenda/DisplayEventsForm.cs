@@ -35,6 +35,9 @@ namespace AgendaForms
             dataGridView.Rows.Clear();
             dataGridView.Refresh();
 
+            //code for scrolling in the table
+            dataGridView.FirstDisplayedScrollingRowIndex = dataGridView.RowCount - 1;
+
             if (availableEvents != null)
                 for (int i = 0; i < availableEvents.Count; i++)
                 {

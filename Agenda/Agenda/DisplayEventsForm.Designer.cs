@@ -30,11 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.DisplayButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +38,14 @@
             this.dayCheckBox = new System.Windows.Forms.CheckBox();
             this.weekCheckBox = new System.Windows.Forms.CheckBox();
             this.allEventsCheckBox = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -65,44 +67,14 @@
             this.EventDate,
             this.EventTime,
             this.EventDescription});
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView.Location = new System.Drawing.Point(0, 203);
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(800, 247);
+            this.dataGridView.Size = new System.Drawing.Size(933, 240);
             this.dataGridView.TabIndex = 0;
-            // 
-            // EventID
-            // 
-            this.EventID.HeaderText = "Event ID";
-            this.EventID.MinimumWidth = 6;
-            this.EventID.Name = "EventID";
-            // 
-            // EventName
-            // 
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.MinimumWidth = 6;
-            this.EventName.Name = "EventName";
-            // 
-            // EventDate
-            // 
-            this.EventDate.HeaderText = "Event Date";
-            this.EventDate.MinimumWidth = 6;
-            this.EventDate.Name = "EventDate";
-            // 
-            // EventTime
-            // 
-            this.EventTime.HeaderText = "Event Time";
-            this.EventTime.MinimumWidth = 6;
-            this.EventTime.Name = "EventTime";
-            // 
-            // EventDescription
-            // 
-            this.EventDescription.HeaderText = "Event Description";
-            this.EventDescription.MinimumWidth = 6;
-            this.EventDescription.Name = "EventDescription";
             // 
             // DisplayButton
             // 
@@ -172,11 +144,53 @@
             this.allEventsCheckBox.Text = "All events";
             this.allEventsCheckBox.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.dataGridView);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 280);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(933, 240);
+            this.panel1.TabIndex = 10;
+            // 
+            // EventID
+            // 
+            this.EventID.HeaderText = "Event ID";
+            this.EventID.MinimumWidth = 6;
+            this.EventID.Name = "EventID";
+            // 
+            // EventName
+            // 
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.MinimumWidth = 6;
+            this.EventName.Name = "EventName";
+            // 
+            // EventDate
+            // 
+            this.EventDate.HeaderText = "Event Date";
+            this.EventDate.MinimumWidth = 6;
+            this.EventDate.Name = "EventDate";
+            // 
+            // EventTime
+            // 
+            this.EventTime.HeaderText = "Event Time";
+            this.EventTime.MinimumWidth = 6;
+            this.EventTime.Name = "EventTime";
+            // 
+            // EventDescription
+            // 
+            this.EventDescription.HeaderText = "Event Description";
+            this.EventDescription.MinimumWidth = 10;
+            this.EventDescription.Name = "EventDescription";
+            // 
             // DisplayEventsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(933, 520);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.allEventsCheckBox);
             this.Controls.Add(this.weekCheckBox);
             this.Controls.Add(this.dayCheckBox);
@@ -184,11 +198,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.DisplayButton);
-            this.Controls.Add(this.dataGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DisplayEventsForm";
             this.Text = "DisplayEventsForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,11 +211,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EventDescription;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button DisplayButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
@@ -210,5 +219,11 @@
         private System.Windows.Forms.CheckBox dayCheckBox;
         private System.Windows.Forms.CheckBox weekCheckBox;
         private System.Windows.Forms.CheckBox allEventsCheckBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EventDescription;
     }
 }

@@ -30,14 +30,15 @@ namespace DBDataAccess
         {
             List<Event> events = null;
             AgendaEntities context = new AgendaEntities();
-            //er;gjerigue
+            DateTime limitDate = date.Date.AddDays(7);
+            
             if (dayOrWeek.ToLower() == "day")
             {
                events = context.Events.Where(e => e.Date == date.Date).ToList();
             }
             else if(dayOrWeek.ToLower() == "week")
             {
-                events = context.Events.Where(e => e.Date >= date.Date.Date && e.Date < date.Date.AddDays(7)).ToList();
+                events = context.Events.Where(e => e.Date >= date.Date.Date && e.Date < limitDate.Date).ToList();
             }
             return events;
         }
