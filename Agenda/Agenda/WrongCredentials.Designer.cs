@@ -32,12 +32,12 @@
             this.WrongCredentialsPanel = new System.Windows.Forms.Panel();
             this.MinimizeButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Wrong = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.WrongCredentialsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // WrongCredentialsPanel
@@ -76,10 +76,21 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(396, 132);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(155, 41);
+            this.pictureBox1.Location = new System.Drawing.Point(175, 41);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(99, 67);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -91,22 +102,11 @@
             this.Wrong.AutoSize = true;
             this.Wrong.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Wrong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.Wrong.Location = new System.Drawing.Point(34, 132);
+            this.Wrong.Location = new System.Drawing.Point(24, 132);
             this.Wrong.Name = "Wrong";
-            this.Wrong.Size = new System.Drawing.Size(340, 32);
+            this.Wrong.Size = new System.Drawing.Size(347, 32);
             this.Wrong.TabIndex = 3;
-            this.Wrong.Text = "Wrong username or password";
-            this.Wrong.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(408, 132);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.Wrong.Text = "Wrong username or password!";
             // 
             // WrongCredentials
             // 
@@ -116,16 +116,16 @@
             this.ClientSize = new System.Drawing.Size(450, 200);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.Wrong);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.WrongCredentialsPanel);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(450, 200);
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "WrongCredentials";
             this.Text = "WrongCredentials";
             this.WrongCredentialsPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,8 +135,8 @@
         private System.Windows.Forms.Panel WrongCredentialsPanel;
         private System.Windows.Forms.Button MinimizeButton;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Wrong;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
