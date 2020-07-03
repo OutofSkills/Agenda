@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Agenda.Properties {
+namespace AgendaForms.Properties {
     using System;
     
     

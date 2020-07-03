@@ -1,7 +1,7 @@
 ﻿using AgendaEvents;
-using Security;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 
@@ -33,7 +33,7 @@ namespace DBDataAccess
 
             if (dayOrWeek.ToLower() == "day")
             {
-               events = context.Events.Where(e => e.Date == date.Date.Date).ToList();
+               events = context.Events.Where(e => e.Date == date.Date).ToList();
             }
             else if(dayOrWeek.ToLower() == "week")
             {

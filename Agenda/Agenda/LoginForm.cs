@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Security;
-namespace Agenda
+namespace AgendaForms
 {
     public partial class LoginForm : Form
     {
