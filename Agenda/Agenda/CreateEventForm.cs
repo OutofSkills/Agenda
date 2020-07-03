@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Agenda
+namespace AgendaForms
 {
     public partial class CreateEventForm : Form
     {
@@ -16,5 +16,7 @@ namespace Agenda
         {
             InitializeComponent();
         }
+
+
     }
 }

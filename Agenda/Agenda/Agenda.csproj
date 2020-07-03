@@ -107,6 +107,12 @@
     <EmbeddedResource Include="AgendaMenu.resx">
       <DependentUpon>AgendaMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateEventForm.resx">
+      <DependentUpon>CreateEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteEventForm.resx">
+      <DependentUpon>DeleteEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisplayEventsForm.resx">
       <DependentUpon>DisplayEventsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -122,6 +128,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UpdateEventForm.resx">
+      <DependentUpon>UpdateEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WrongCredentials.resx">
       <DependentUpon>WrongCredentials.cs</DependentUpon>
     </EmbeddedResource>
