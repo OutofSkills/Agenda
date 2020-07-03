@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,8 +40,9 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.IntervalListBox = new System.Windows.Forms.ListBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dayCheckBox = new System.Windows.Forms.CheckBox();
+            this.weekCheckBox = new System.Windows.Forms.CheckBox();
+            this.allEventsCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,14 +50,14 @@
             // 
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EventID,
@@ -120,7 +119,7 @@
             // dateTimePicker
             // 
             this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker.Location = new System.Drawing.Point(69, 83);
+            this.dateTimePicker.Location = new System.Drawing.Point(69, 77);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker.TabIndex = 2;
@@ -143,37 +142,44 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Date";
             // 
-            // IntervalListBox
+            // dayCheckBox
             // 
-            this.IntervalListBox.FormattingEnabled = true;
-            this.IntervalListBox.ItemHeight = 16;
-            this.IntervalListBox.Items.AddRange(new object[] {
-            "day",
-            "week"});
-            this.IntervalListBox.Location = new System.Drawing.Point(294, 69);
-            this.IntervalListBox.Name = "IntervalListBox";
-            this.IntervalListBox.Size = new System.Drawing.Size(120, 36);
-            this.IntervalListBox.TabIndex = 6;
+            this.dayCheckBox.AutoSize = true;
+            this.dayCheckBox.Location = new System.Drawing.Point(294, 81);
+            this.dayCheckBox.Name = "dayCheckBox";
+            this.dayCheckBox.Size = new System.Drawing.Size(140, 21);
+            this.dayCheckBox.TabIndex = 7;
+            this.dayCheckBox.Text = "Events of the day";
+            this.dayCheckBox.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // weekCheckBox
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.listView1.Location = new System.Drawing.Point(456, 168);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(105, 10);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.weekCheckBox.AutoSize = true;
+            this.weekCheckBox.Location = new System.Drawing.Point(294, 108);
+            this.weekCheckBox.Name = "weekCheckBox";
+            this.weekCheckBox.Size = new System.Drawing.Size(153, 21);
+            this.weekCheckBox.TabIndex = 8;
+            this.weekCheckBox.Text = "Events of the week ";
+            this.weekCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // allEventsCheckBox
+            // 
+            this.allEventsCheckBox.AutoSize = true;
+            this.allEventsCheckBox.Location = new System.Drawing.Point(294, 135);
+            this.allEventsCheckBox.Name = "allEventsCheckBox";
+            this.allEventsCheckBox.Size = new System.Drawing.Size(91, 21);
+            this.allEventsCheckBox.TabIndex = 9;
+            this.allEventsCheckBox.Text = "All events";
+            this.allEventsCheckBox.UseVisualStyleBackColor = true;
             // 
             // DisplayEventsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.IntervalListBox);
+            this.Controls.Add(this.allEventsCheckBox);
+            this.Controls.Add(this.weekCheckBox);
+            this.Controls.Add(this.dayCheckBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker);
@@ -200,7 +206,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox IntervalListBox;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.CheckBox dayCheckBox;
+        private System.Windows.Forms.CheckBox weekCheckBox;
+        private System.Windows.Forms.CheckBox allEventsCheckBox;
     }
 }

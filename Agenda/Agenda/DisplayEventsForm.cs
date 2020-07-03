@@ -16,8 +16,21 @@ namespace AgendaForms
         {
             Agenda agenda = new Agenda();
             DateTime date = dateTimePicker.Value;
+            string intervalChoice = string.Empty;
 
-            var availableEvents = agenda.DisplayEvents(date.Date, IntervalListBox.SelectedItem.ToString());
+            if (dayCheckBox.Checked)
+            {
+                intervalChoice = "day";
+            }
+            else if(weekCheckBox.Checked)
+            {
+                intervalChoice = "week";
+            }else if(allEventsCheckBox.Checked)
+            {
+                intervalChoice = "all";
+            }
+
+            var availableEvents = agenda.DisplayEvents(date.Date, intervalChoice);
 
             dataGridView.Rows.Clear();
             dataGridView.Refresh();
