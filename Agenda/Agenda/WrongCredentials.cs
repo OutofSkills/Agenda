@@ -17,16 +17,6 @@ namespace AgendaForms
             InitializeComponent();
         }
 
-        private void ErrorLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         Point lastPoint;
         private void WrongCredentialsPanel_MouseDown(object sender, MouseEventArgs e)
         {

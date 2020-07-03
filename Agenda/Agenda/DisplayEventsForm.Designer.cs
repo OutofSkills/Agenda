@@ -185,6 +185,7 @@
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.DisplayButton);
             this.Controls.Add(this.dataGridView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DisplayEventsForm";
             this.Text = "DisplayEventsForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
