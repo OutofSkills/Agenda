@@ -123,9 +123,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\account_image.png" />
+    <Content Include="Images\error.png" />
     <Content Include="Images\Password.png" />
     <Content Include="Images\sign-in.png" />
     <Content Include="Images\user.png" />
+    <Content Include="Images\whaat.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

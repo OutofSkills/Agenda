@@ -36,8 +36,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.SignInButton = new System.Windows.Forms.Button();
             this.MovePanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.MinimizeMenuButton = new System.Windows.Forms.Button();
+            this.ExitMenuButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,7 +70,6 @@
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(323, 62);
             this.UsernameTextBox.TabIndex = 2;
-            this.UsernameTextBox.TextChanged += new System.EventHandler(this.UsernameTextBox_TextChanged);
             this.UsernameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UsernameTextBox_Enter);
             // 
             // PasswordTextBox
@@ -111,8 +110,8 @@
             // 
             // MovePanel
             // 
-            this.MovePanel.Controls.Add(this.button2);
-            this.MovePanel.Controls.Add(this.button1);
+            this.MovePanel.Controls.Add(this.MinimizeMenuButton);
+            this.MovePanel.Controls.Add(this.ExitMenuButton);
             this.MovePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MovePanel.Location = new System.Drawing.Point(0, 0);
             this.MovePanel.Name = "MovePanel";
@@ -121,29 +120,29 @@
             this.MovePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseDown);
             this.MovePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             // 
-            // button2
+            // MinimizeMenuButton
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.Location = new System.Drawing.Point(416, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = " -";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.MinimizeMenuButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MinimizeMenuButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeMenuButton.Location = new System.Drawing.Point(416, 0);
+            this.MinimizeMenuButton.Name = "MinimizeMenuButton";
+            this.MinimizeMenuButton.Size = new System.Drawing.Size(42, 35);
+            this.MinimizeMenuButton.TabIndex = 1;
+            this.MinimizeMenuButton.Text = " -";
+            this.MinimizeMenuButton.UseVisualStyleBackColor = false;
+            this.MinimizeMenuButton.Click += new System.EventHandler(this.MinimizeMenuButton_Click);
             // 
-            // button1
+            // ExitMenuButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(458, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ExitMenuButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ExitMenuButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitMenuButton.Location = new System.Drawing.Point(458, 0);
+            this.ExitMenuButton.Name = "ExitMenuButton";
+            this.ExitMenuButton.Size = new System.Drawing.Size(42, 35);
+            this.ExitMenuButton.TabIndex = 0;
+            this.ExitMenuButton.Text = "X";
+            this.ExitMenuButton.UseVisualStyleBackColor = false;
+            this.ExitMenuButton.Click += new System.EventHandler(this.ExitMenuButton_Click);
             // 
             // pictureBox3
             // 
@@ -222,7 +221,6 @@
             this.label1.Size = new System.Drawing.Size(233, 43);
             this.label1.TabIndex = 10;
             this.label1.Text = "Authentication";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // LoginForm
             // 
@@ -239,7 +237,6 @@
             this.MinimumSize = new System.Drawing.Size(500, 550);
             this.Name = "LoginForm";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -260,8 +257,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button SignInButton;
         private System.Windows.Forms.Panel MovePanel;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button MinimizeMenuButton;
+        private System.Windows.Forms.Button ExitMenuButton;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel2;

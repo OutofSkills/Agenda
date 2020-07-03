@@ -57,30 +57,18 @@ namespace AgendaForms
         }
         #endregion
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void ExitMenuButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void MinimizeMenuButton_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void UsernameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         Point lastPoint;
         private void LoginForm_MouseMove(object sender, MouseEventArgs e)

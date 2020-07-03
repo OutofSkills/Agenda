@@ -28,37 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ErrorLabel = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WrongCredentials));
+            this.WrongCredentialsPanel = new System.Windows.Forms.Panel();
+            this.MinimizeButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Wrong = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.WrongCredentialsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // ErrorLabel
+            // WrongCredentialsPanel
             // 
-            this.ErrorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ErrorLabel.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(3)))), ((int)(((byte)(23)))));
-            this.ErrorLabel.Location = new System.Drawing.Point(0, 0);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(382, 153);
-            this.ErrorLabel.TabIndex = 0;
-            this.ErrorLabel.Text = "Wrong Username or Password";
-            this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.WrongCredentialsPanel.Controls.Add(this.MinimizeButton);
+            this.WrongCredentialsPanel.Controls.Add(this.ExitButton);
+            this.WrongCredentialsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.WrongCredentialsPanel.Location = new System.Drawing.Point(0, 0);
+            this.WrongCredentialsPanel.Name = "WrongCredentialsPanel";
+            this.WrongCredentialsPanel.Size = new System.Drawing.Size(400, 35);
+            this.WrongCredentialsPanel.TabIndex = 1;
+            this.WrongCredentialsPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.WrongCredentialsPanel_MouseDown);
+            this.WrongCredentialsPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.WrongCredentialsPanel_MouseMove);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeButton.Location = new System.Drawing.Point(316, 0);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(42, 35);
+            this.MinimizeButton.TabIndex = 2;
+            this.MinimizeButton.Text = " -";
+            this.MinimizeButton.UseVisualStyleBackColor = false;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ExitButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitButton.Location = new System.Drawing.Point(358, 0);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(42, 35);
+            this.ExitButton.TabIndex = 0;
+            this.ExitButton.Text = "X";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(155, 41);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(99, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Wrong
+            // 
+            this.Wrong.AutoSize = true;
+            this.Wrong.Font = new System.Drawing.Font("Palatino Linotype", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Wrong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.Wrong.Location = new System.Drawing.Point(18, 132);
+            this.Wrong.Name = "Wrong";
+            this.Wrong.Size = new System.Drawing.Size(347, 32);
+            this.Wrong.TabIndex = 3;
+            this.Wrong.Text = "Wrong username or password!";
+            this.Wrong.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(358, 132);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // WrongCredentials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 153);
-            this.Controls.Add(this.ErrorLabel);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(400, 200);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.Wrong);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.WrongCredentialsPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximumSize = new System.Drawing.Size(400, 200);
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "WrongCredentials";
             this.Text = "WrongCredentials";
+            this.WrongCredentialsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Panel WrongCredentialsPanel;
+        private System.Windows.Forms.Button MinimizeButton;
+        private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label Wrong;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
