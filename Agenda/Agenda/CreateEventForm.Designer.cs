@@ -1,4 +1,4 @@
-﻿namespace Agenda
+﻿namespace AgendaForms
 {
     partial class CreateEventForm
     {

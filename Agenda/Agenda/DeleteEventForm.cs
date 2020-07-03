@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Agenda
+namespace AgendaForms
 {
     public partial class DeleteEventForm : Form
     {
         public DeleteEventForm()
         {
             InitializeComponent();
+        }
+
+        private void DeleteEventForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
