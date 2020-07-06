@@ -160,9 +160,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AgendaEvents\DBDataAccess.csproj">
+    <ProjectReference Include="..\AgendaEvents\Agenda.DBDataAccess.csproj">
       <Project>{98e89e92-a168-4a72-ba9b-cf68d0ad2fbf}</Project>
-      <Name>DBDataAccess</Name>
+      <Name>Agenda.DBDataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

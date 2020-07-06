@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda", "Agenda\Agenda.csproj", "{6D1AE99E-F0F6-49B1-B51D-5675DEB324A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.UI", "Agenda\Agenda.UI.csproj", "{6D1AE99E-F0F6-49B1-B51D-5675DEB324A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBDataAccess", "AgendaEvents\DBDataAccess.csproj", "{98E89E92-A168-4A72-BA9B-CF68D0AD2FBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.DBDataAccess", "AgendaEvents\Agenda.DBDataAccess.csproj", "{98E89E92-A168-4A72-BA9B-CF68D0AD2FBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
