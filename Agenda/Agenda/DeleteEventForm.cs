@@ -1,4 +1,5 @@
-﻿using DBDataAccess;
+﻿using AgendaErrors;
+using DBDataAccess;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -76,12 +77,25 @@ namespace AgendaForms
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             Agenda agenda = new Agenda();
-            agenda.DeleteEvent(id);
+            if (id != default)
+            {
+                agenda.DeleteEvent(id);
+            }
+            else
+            {
+                ShowError("No selected item to delete");
+            }
 
-            ReloadTable();
+                ReloadTable();
         }
 
         #region Tools
+        private void ShowError(string v)
+        {
+            ErrorForm errorWindow = new ErrorForm();
+            errorWindow.setLabelText(v);
+            errorWindow.Show();
+        }
         private DateTime ConvertToDate(string v)
         {
             return Convert.ToDateTime(v);

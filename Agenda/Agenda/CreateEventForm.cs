@@ -1,12 +1,6 @@
-﻿using DBDataAccess;
+﻿using AgendaErrors;
+using DBDataAccess;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgendaForms
@@ -36,15 +30,22 @@ namespace AgendaForms
             DateTime time = TimePicker.Value;
             string description = DescriptionTextBox.Text;
 
-            if(name != string.Empty && date != default && time != default)
-            {
+            if(name != string.Empty || date != default || time != default)
+                ShowErrorWindow("Invalid provided event data");
+            else if (date < DateTime.Now.Date)
+                ShowErrorWindow("Invalid introduced date");
                 agenda.CreateEvent(name, date, time, description);
-            }
-
+            
             ClearFields();
         }
 
         #region Tools
+        private void ShowErrorWindow(string v)
+        {
+            ErrorForm errorWindow = new ErrorForm();
+            errorWindow.setLabelText(v);
+            errorWindow.Show();
+        }
         private void InitializeTimePicker()
         {
             TimePicker.CustomFormat = "HH:mm";

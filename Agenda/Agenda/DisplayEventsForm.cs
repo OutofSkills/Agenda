@@ -2,6 +2,7 @@
 using DBDataAccess;
 using System.Windows.Forms;
 using System.Diagnostics;
+using AgendaErrors;
 
 namespace AgendaForms
 {
@@ -78,10 +79,17 @@ namespace AgendaForms
             }
             else
             {
-                intervalChoice = string.Empty;
+                ShowError("You have to choose events from a Day/Week/All");
             }
 
             return intervalChoice;
+        }
+
+        private void ShowError(string v)
+        {
+            ErrorForm errorForm = new ErrorForm();
+            errorForm.setLabelText(v);
+            errorForm.Show();
         }
 
         public string ConvertDateFormat(DateTime date)

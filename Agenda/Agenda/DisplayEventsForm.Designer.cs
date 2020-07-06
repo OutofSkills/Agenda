@@ -197,10 +197,10 @@
             this.AllEventsRadioButton.AutoSize = true;
             this.AllEventsRadioButton.Location = new System.Drawing.Point(294, 131);
             this.AllEventsRadioButton.Name = "AllEventsRadioButton";
-            this.AllEventsRadioButton.Size = new System.Drawing.Size(114, 21);
+            this.AllEventsRadioButton.Size = new System.Drawing.Size(90, 21);
             this.AllEventsRadioButton.TabIndex = 13;
             this.AllEventsRadioButton.TabStop = true;
-            this.AllEventsRadioButton.Text = "All the events";
+            this.AllEventsRadioButton.Text = "All events";
             this.AllEventsRadioButton.UseVisualStyleBackColor = true;
             // 
             // DisplayEventsForm

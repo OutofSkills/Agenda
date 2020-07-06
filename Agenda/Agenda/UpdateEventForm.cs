@@ -1,4 +1,5 @@
-﻿using AgendaEvents;
+﻿using AgendaErrors;
+using AgendaEvents;
 using DBDataAccess;
 using System;
 using System.Collections.Generic;
@@ -93,18 +94,25 @@ namespace AgendaForms
             DateTime time = UpdTimePicker.Value;
             string description = UpdDescriptionTextBox.Text;
 
-            if (name != string.Empty && date != default && time != default)
-            {
+            if (name == string.Empty || date == default || time == default)
+                ShowError("No selected item to update");
+            else if (date < DateTime.Now.Date)
+                ShowError("Invalid introduced date");
+
                 Agenda agenda = new Agenda();
                 agenda.UpdateEvent(this.id, name, date, time, description);
 
                 ReloadTable();
-            }
-
-            
         }
 
         #region Tools
+        private void ShowError(string v)
+        {
+            ErrorForm errorWindow= new ErrorForm();
+            errorWindow.setLabelText(v);
+            errorWindow.Show();
+        }
+
         private void ReloadTable()
         {
             dataGridViewUpdate.Rows.Clear();
