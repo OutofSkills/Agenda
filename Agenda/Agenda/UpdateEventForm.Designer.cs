@@ -93,6 +93,7 @@
             this.dataGridViewUpdate.RowHeadersVisible = false;
             this.dataGridViewUpdate.RowHeadersWidth = 51;
             this.dataGridViewUpdate.RowTemplate.Height = 24;
+            this.dataGridViewUpdate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUpdate.Size = new System.Drawing.Size(809, 226);
             this.dataGridViewUpdate.TabIndex = 1;
             this.dataGridViewUpdate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUpdate_CellContentClick);
@@ -232,7 +233,7 @@
             this.Controls.Add(this.EventNameLabel);
             this.Controls.Add(this.panel1);
             this.Name = "UpdateEventForm";
-            this.Text = "ЙЙ";
+            this.Text = "Update Event";
             this.Load += new System.EventHandler(this.UpdateEventForm_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpdate)).EndInit();
