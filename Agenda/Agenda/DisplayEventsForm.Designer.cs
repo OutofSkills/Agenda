@@ -31,6 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
+            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.DisplayButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -40,11 +45,6 @@
             this.DayRadioButton = new System.Windows.Forms.RadioButton();
             this.WeekRadioButton = new System.Windows.Forms.RadioButton();
             this.AllEventsRadioButton = new System.Windows.Forms.RadioButton();
-            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -83,8 +83,43 @@
             this.dataGridViewDisplay.RowHeadersVisible = false;
             this.dataGridViewDisplay.RowHeadersWidth = 51;
             this.dataGridViewDisplay.RowTemplate.Height = 24;
-            this.dataGridViewDisplay.Size = new System.Drawing.Size(933, 240);
+            this.dataGridViewDisplay.Size = new System.Drawing.Size(862, 240);
             this.dataGridViewDisplay.TabIndex = 0;
+            // 
+            // EventID
+            // 
+            this.EventID.FillWeight = 74.37768F;
+            this.EventID.HeaderText = "Event ID";
+            this.EventID.MinimumWidth = 6;
+            this.EventID.Name = "EventID";
+            // 
+            // EventName
+            // 
+            this.EventName.FillWeight = 97.31081F;
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.MinimumWidth = 6;
+            this.EventName.Name = "EventName";
+            // 
+            // EventDate
+            // 
+            this.EventDate.FillWeight = 97.31081F;
+            this.EventDate.HeaderText = "Event Date";
+            this.EventDate.MinimumWidth = 6;
+            this.EventDate.Name = "EventDate";
+            // 
+            // EventTime
+            // 
+            this.EventTime.FillWeight = 97.31081F;
+            this.EventTime.HeaderText = "Event Time";
+            this.EventTime.MinimumWidth = 6;
+            this.EventTime.Name = "EventTime";
+            // 
+            // EventDescription
+            // 
+            this.EventDescription.FillWeight = 133.6898F;
+            this.EventDescription.HeaderText = "Event Description";
+            this.EventDescription.MinimumWidth = 10;
+            this.EventDescription.Name = "EventDescription";
             // 
             // DisplayButton
             // 
@@ -129,9 +164,9 @@
             this.panel1.AutoScroll = true;
             this.panel1.Controls.Add(this.dataGridViewDisplay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 280);
+            this.panel1.Location = new System.Drawing.Point(0, 274);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(933, 240);
+            this.panel1.Size = new System.Drawing.Size(862, 240);
             this.panel1.TabIndex = 10;
             // 
             // DayRadioButton
@@ -167,47 +202,12 @@
             this.AllEventsRadioButton.Text = "All the events";
             this.AllEventsRadioButton.UseVisualStyleBackColor = true;
             // 
-            // EventID
-            // 
-            this.EventID.FillWeight = 74.37768F;
-            this.EventID.HeaderText = "Event ID";
-            this.EventID.MinimumWidth = 6;
-            this.EventID.Name = "EventID";
-            // 
-            // EventName
-            // 
-            this.EventName.FillWeight = 97.31081F;
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.MinimumWidth = 6;
-            this.EventName.Name = "EventName";
-            // 
-            // EventDate
-            // 
-            this.EventDate.FillWeight = 97.31081F;
-            this.EventDate.HeaderText = "Event Date";
-            this.EventDate.MinimumWidth = 6;
-            this.EventDate.Name = "EventDate";
-            // 
-            // EventTime
-            // 
-            this.EventTime.FillWeight = 97.31081F;
-            this.EventTime.HeaderText = "Event Time";
-            this.EventTime.MinimumWidth = 6;
-            this.EventTime.Name = "EventTime";
-            // 
-            // EventDescription
-            // 
-            this.EventDescription.FillWeight = 133.6898F;
-            this.EventDescription.HeaderText = "Event Description";
-            this.EventDescription.MinimumWidth = 10;
-            this.EventDescription.Name = "EventDescription";
-            // 
             // DisplayEventsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(933, 520);
+            this.ClientSize = new System.Drawing.Size(862, 514);
             this.Controls.Add(this.AllEventsRadioButton);
             this.Controls.Add(this.WeekRadioButton);
             this.Controls.Add(this.DayRadioButton);

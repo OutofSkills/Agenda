@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(862, 514);
             this.Controls.Add(this.CreateButton);
             this.Controls.Add(this.TimePicker);
             this.Controls.Add(this.DatePicker);
@@ -140,6 +140,7 @@
             this.Controls.Add(this.TimeLabel);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.EventNameLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateEventForm";
             this.Text = "CreateForm";
             this.Load += new System.EventHandler(this.CreateEventForm_Load);

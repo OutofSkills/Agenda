@@ -51,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(253, 449);
+            this.panel1.Size = new System.Drawing.Size(253, 549);
             this.panel1.TabIndex = 0;
             // 
             // DeleteButton
@@ -105,7 +105,7 @@
             this.MoveMenuPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.MoveMenuPanel.Location = new System.Drawing.Point(253, 0);
             this.MoveMenuPanel.Name = "MoveMenuPanel";
-            this.MoveMenuPanel.Size = new System.Drawing.Size(542, 35);
+            this.MoveMenuPanel.Size = new System.Drawing.Size(862, 35);
             this.MoveMenuPanel.TabIndex = 1;
             this.MoveMenuPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AgendaMenu_MouseDown);
             this.MoveMenuPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AgendaMenu_MouseMove);
@@ -113,7 +113,7 @@
             // MinimizeButton
             // 
             this.MinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.MinimizeButton.Location = new System.Drawing.Point(458, 0);
+            this.MinimizeButton.Location = new System.Drawing.Point(778, 0);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(42, 35);
             this.MinimizeButton.TabIndex = 1;
@@ -124,7 +124,7 @@
             // ExitButton
             // 
             this.ExitButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ExitButton.Location = new System.Drawing.Point(500, 0);
+            this.ExitButton.Location = new System.Drawing.Point(820, 0);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(42, 35);
             this.ExitButton.TabIndex = 0;
@@ -138,7 +138,7 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(253, 35);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(542, 414);
+            this.panelChildForm.Size = new System.Drawing.Size(862, 514);
             this.panelChildForm.TabIndex = 2;
             // 
             // AgendaMenu
@@ -146,7 +146,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(795, 449);
+            this.ClientSize = new System.Drawing.Size(1115, 549);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.MoveMenuPanel);
             this.Controls.Add(this.panel1);
