@@ -32,6 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewUpdate = new System.Windows.Forms.DataGridView();
+            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdEventNameTextBox = new System.Windows.Forms.TextBox();
             this.EventNameLabel = new System.Windows.Forms.Label();
             this.UpdDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -41,11 +46,6 @@
             this.UpdDescriptionTextBox = new System.Windows.Forms.TextBox();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUpdate)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +54,9 @@
             // 
             this.panel1.Controls.Add(this.dataGridViewUpdate);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 266);
+            this.panel1.Location = new System.Drawing.Point(0, 241);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(809, 226);
+            this.panel1.Size = new System.Drawing.Size(844, 226);
             this.panel1.TabIndex = 0;
             // 
             // dataGridViewUpdate
@@ -93,9 +93,44 @@
             this.dataGridViewUpdate.RowHeadersVisible = false;
             this.dataGridViewUpdate.RowHeadersWidth = 51;
             this.dataGridViewUpdate.RowTemplate.Height = 24;
-            this.dataGridViewUpdate.Size = new System.Drawing.Size(809, 226);
+            this.dataGridViewUpdate.Size = new System.Drawing.Size(844, 226);
             this.dataGridViewUpdate.TabIndex = 1;
             this.dataGridViewUpdate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUpdate_CellContentClick);
+            // 
+            // EventID
+            // 
+            this.EventID.FillWeight = 80.21387F;
+            this.EventID.HeaderText = "Event ID";
+            this.EventID.MinimumWidth = 6;
+            this.EventID.Name = "EventID";
+            // 
+            // EventName
+            // 
+            this.EventName.FillWeight = 95.97646F;
+            this.EventName.HeaderText = "Event Name";
+            this.EventName.MinimumWidth = 6;
+            this.EventName.Name = "EventName";
+            // 
+            // EventDate
+            // 
+            this.EventDate.FillWeight = 95.97646F;
+            this.EventDate.HeaderText = "Event Date";
+            this.EventDate.MinimumWidth = 6;
+            this.EventDate.Name = "EventDate";
+            // 
+            // EventTime
+            // 
+            this.EventTime.FillWeight = 95.97646F;
+            this.EventTime.HeaderText = "Event Time";
+            this.EventTime.MinimumWidth = 6;
+            this.EventTime.Name = "EventTime";
+            // 
+            // EventDescription
+            // 
+            this.EventDescription.FillWeight = 131.8566F;
+            this.EventDescription.HeaderText = "Event Description";
+            this.EventDescription.MinimumWidth = 10;
+            this.EventDescription.Name = "EventDescription";
             // 
             // UpdEventNameTextBox
             // 
@@ -181,46 +216,11 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
-            // EventID
-            // 
-            this.EventID.FillWeight = 80.21387F;
-            this.EventID.HeaderText = "Event ID";
-            this.EventID.MinimumWidth = 6;
-            this.EventID.Name = "EventID";
-            // 
-            // EventName
-            // 
-            this.EventName.FillWeight = 95.97646F;
-            this.EventName.HeaderText = "Event Name";
-            this.EventName.MinimumWidth = 6;
-            this.EventName.Name = "EventName";
-            // 
-            // EventDate
-            // 
-            this.EventDate.FillWeight = 95.97646F;
-            this.EventDate.HeaderText = "Event Date";
-            this.EventDate.MinimumWidth = 6;
-            this.EventDate.Name = "EventDate";
-            // 
-            // EventTime
-            // 
-            this.EventTime.FillWeight = 95.97646F;
-            this.EventTime.HeaderText = "Event Time";
-            this.EventTime.MinimumWidth = 6;
-            this.EventTime.Name = "EventTime";
-            // 
-            // EventDescription
-            // 
-            this.EventDescription.FillWeight = 131.8566F;
-            this.EventDescription.HeaderText = "Event Description";
-            this.EventDescription.MinimumWidth = 10;
-            this.EventDescription.Name = "EventDescription";
-            // 
             // UpdateEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 492);
+            this.ClientSize = new System.Drawing.Size(844, 467);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.UpdDescriptionTextBox);
             this.Controls.Add(this.DescriptionLabel);
