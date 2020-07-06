@@ -64,14 +64,17 @@ namespace DBDataAccess
             }
         }
        
-        public void DeleteEvent(DateTime date, DateTime time)
+        public void DeleteEvent(int id)
         {
             AgendaEntities context = new AgendaEntities();
 
-            var eventToRemove = context.Events.Where(e => e.Date == date.Date && e.Time == time.TimeOfDay).FirstOrDefault();
+            var eventToRemove = context.Events.FirstOrDefault(e=>e.Id == id);
 
             if (eventToRemove != null)
+            {
                 context.Events.Remove(eventToRemove);
+                context.SaveChanges();
+            }
         }
     }
 }
