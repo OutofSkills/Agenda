@@ -26,7 +26,7 @@ namespace DBDataAccess
             }
         }
 
-        public List<Event> DisplayEvents(DateTime date, string dayOrWeek)
+        public List<Event> GetEvents(DateTime date, string dayOrWeek)
         {
             List<Event> events = null;
             AgendaEntities context = new AgendaEntities();
@@ -39,23 +39,28 @@ namespace DBDataAccess
             else if(dayOrWeek.ToLower() == "week")
             {
                 events = context.Events.Where(e => e.Date >= date.Date.Date && e.Date < limitDate.Date).ToList();
+            }else if(dayOrWeek.ToLower() == "all")
+            {
+                events = context.Events.Where(e => e.Date >= DateTime.Now).ToList();
             }
             return events;
         }
 
 
-        public void UpdateEvent(string name, DateTime date, DateTime time, string description)
+        public void UpdateEvent(int id, string name, DateTime date, DateTime time, string description)
         {
             using (var context = new AgendaEntities())
             {
-                var evnt = new Event()
+                var evnt = context.Events.SingleOrDefault(e=>e.Id == id);
+                if(evnt != null)
                 {
-                    Name = name,
-                    Date = date,
-                    Time = time.TimeOfDay,
-                    Description = description
-                };
-                context.SaveChanges();
+                    evnt.Name = name;
+                    evnt.Date = date;
+                    evnt.Time = time.TimeOfDay;
+                    evnt.Description = description;
+
+                    context.SaveChanges();
+                }
             }
         }
        

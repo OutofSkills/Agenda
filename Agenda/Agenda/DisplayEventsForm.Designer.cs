@@ -29,29 +29,31 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridViewDisplay = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.DisplayButton = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dayCheckBox = new System.Windows.Forms.CheckBox();
-            this.weekCheckBox = new System.Windows.Forms.CheckBox();
-            this.allEventsCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DayRadioButton = new System.Windows.Forms.RadioButton();
+            this.WeekRadioButton = new System.Windows.Forms.RadioButton();
+            this.AllEventsRadioButton = new System.Windows.Forms.RadioButton();
             this.EventID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EventDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView
+            // dataGridViewDisplay
             // 
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridViewDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDisplay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewDisplay.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -59,22 +61,30 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDisplay.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EventID,
             this.EventName,
             this.EventDate,
             this.EventTime,
             this.EventDescription});
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.RowHeadersWidth = 51;
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(933, 240);
-            this.dataGridView.TabIndex = 0;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewDisplay.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewDisplay.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewDisplay.Name = "dataGridViewDisplay";
+            this.dataGridViewDisplay.RowHeadersVisible = false;
+            this.dataGridViewDisplay.RowHeadersWidth = 51;
+            this.dataGridViewDisplay.RowTemplate.Height = 24;
+            this.dataGridViewDisplay.Size = new System.Drawing.Size(933, 240);
+            this.dataGridViewDisplay.TabIndex = 0;
             // 
             // DisplayButton
             // 
@@ -114,72 +124,80 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Date";
             // 
-            // dayCheckBox
-            // 
-            this.dayCheckBox.AutoSize = true;
-            this.dayCheckBox.Location = new System.Drawing.Point(294, 81);
-            this.dayCheckBox.Name = "dayCheckBox";
-            this.dayCheckBox.Size = new System.Drawing.Size(140, 21);
-            this.dayCheckBox.TabIndex = 7;
-            this.dayCheckBox.Text = "Events of the day";
-            this.dayCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // weekCheckBox
-            // 
-            this.weekCheckBox.AutoSize = true;
-            this.weekCheckBox.Location = new System.Drawing.Point(294, 108);
-            this.weekCheckBox.Name = "weekCheckBox";
-            this.weekCheckBox.Size = new System.Drawing.Size(153, 21);
-            this.weekCheckBox.TabIndex = 8;
-            this.weekCheckBox.Text = "Events of the week ";
-            this.weekCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // allEventsCheckBox
-            // 
-            this.allEventsCheckBox.AutoSize = true;
-            this.allEventsCheckBox.Location = new System.Drawing.Point(294, 135);
-            this.allEventsCheckBox.Name = "allEventsCheckBox";
-            this.allEventsCheckBox.Size = new System.Drawing.Size(91, 21);
-            this.allEventsCheckBox.TabIndex = 9;
-            this.allEventsCheckBox.Text = "All events";
-            this.allEventsCheckBox.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.dataGridView);
+            this.panel1.Controls.Add(this.dataGridViewDisplay);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 280);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(933, 240);
             this.panel1.TabIndex = 10;
             // 
+            // DayRadioButton
+            // 
+            this.DayRadioButton.AutoSize = true;
+            this.DayRadioButton.Location = new System.Drawing.Point(294, 77);
+            this.DayRadioButton.Name = "DayRadioButton";
+            this.DayRadioButton.Size = new System.Drawing.Size(141, 21);
+            this.DayRadioButton.TabIndex = 11;
+            this.DayRadioButton.TabStop = true;
+            this.DayRadioButton.Text = "Events of the Day";
+            this.DayRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // WeekRadioButton
+            // 
+            this.WeekRadioButton.AutoSize = true;
+            this.WeekRadioButton.Location = new System.Drawing.Point(294, 104);
+            this.WeekRadioButton.Name = "WeekRadioButton";
+            this.WeekRadioButton.Size = new System.Drawing.Size(152, 21);
+            this.WeekRadioButton.TabIndex = 12;
+            this.WeekRadioButton.TabStop = true;
+            this.WeekRadioButton.Text = "Events of the Week";
+            this.WeekRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AllEventsRadioButton
+            // 
+            this.AllEventsRadioButton.AutoSize = true;
+            this.AllEventsRadioButton.Location = new System.Drawing.Point(294, 131);
+            this.AllEventsRadioButton.Name = "AllEventsRadioButton";
+            this.AllEventsRadioButton.Size = new System.Drawing.Size(114, 21);
+            this.AllEventsRadioButton.TabIndex = 13;
+            this.AllEventsRadioButton.TabStop = true;
+            this.AllEventsRadioButton.Text = "All the events";
+            this.AllEventsRadioButton.UseVisualStyleBackColor = true;
+            // 
             // EventID
             // 
+            this.EventID.FillWeight = 74.37768F;
             this.EventID.HeaderText = "Event ID";
             this.EventID.MinimumWidth = 6;
             this.EventID.Name = "EventID";
             // 
             // EventName
             // 
+            this.EventName.FillWeight = 97.31081F;
             this.EventName.HeaderText = "Event Name";
             this.EventName.MinimumWidth = 6;
             this.EventName.Name = "EventName";
             // 
             // EventDate
             // 
+            this.EventDate.FillWeight = 97.31081F;
             this.EventDate.HeaderText = "Event Date";
             this.EventDate.MinimumWidth = 6;
             this.EventDate.Name = "EventDate";
             // 
             // EventTime
             // 
+            this.EventTime.FillWeight = 97.31081F;
             this.EventTime.HeaderText = "Event Time";
             this.EventTime.MinimumWidth = 6;
             this.EventTime.Name = "EventTime";
             // 
             // EventDescription
             // 
+            this.EventDescription.FillWeight = 133.6898F;
             this.EventDescription.HeaderText = "Event Description";
             this.EventDescription.MinimumWidth = 10;
             this.EventDescription.Name = "EventDescription";
@@ -190,10 +208,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(933, 520);
+            this.Controls.Add(this.AllEventsRadioButton);
+            this.Controls.Add(this.WeekRadioButton);
+            this.Controls.Add(this.DayRadioButton);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.allEventsCheckBox);
-            this.Controls.Add(this.weekCheckBox);
-            this.Controls.Add(this.dayCheckBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker);
@@ -201,7 +219,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DisplayEventsForm";
             this.Text = "DisplayEventsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,16 +228,16 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView dataGridViewDisplay;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button DisplayButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox dayCheckBox;
-        private System.Windows.Forms.CheckBox weekCheckBox;
-        private System.Windows.Forms.CheckBox allEventsCheckBox;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.RadioButton DayRadioButton;
+        private System.Windows.Forms.RadioButton WeekRadioButton;
+        private System.Windows.Forms.RadioButton AllEventsRadioButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventID;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventName;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventDate;

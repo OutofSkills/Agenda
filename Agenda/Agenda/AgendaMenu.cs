@@ -13,6 +13,7 @@ namespace AgendaForms
 {
     public partial class AgendaMenu : Form
     {
+        private Form activeForm = null;
         public AgendaMenu()
         {
             InitializeComponent();
@@ -42,9 +43,7 @@ namespace AgendaForms
         {
             lastPoint = new Point(e.X, e.Y);
         }
-
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        private void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
@@ -60,22 +59,22 @@ namespace AgendaForms
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new CreateEventForm());
+            OpenChildForm(new CreateEventForm());
         }
 
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new DisplayEventsForm());
+            OpenChildForm(new DisplayEventsForm());
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new UpdateEventForm());
+            OpenChildForm(new UpdateEventForm());
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            openChildForm(new DeleteEventForm());
+            OpenChildForm(new DeleteEventForm());
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DBDataAccess
     {
         void CreateEvent(string name, DateTime date, DateTime time, string description);
         void DeleteEvent(DateTime date, DateTime time);
-        List<Event> DisplayEvents(DateTime date, string dayOrWeek);
-        void UpdateEvent(string name, DateTime date, DateTime time, string description);
+        List<Event> GetEvents(DateTime date, string dayOrWeek);
+        void UpdateEvent(int id, string name, DateTime date, DateTime time, string description);
     }
 }
