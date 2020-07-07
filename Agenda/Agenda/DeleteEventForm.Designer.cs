@@ -42,6 +42,7 @@
             this.DeleteNameTextBox = new System.Windows.Forms.TextBox();
             this.EventNameLabel = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelete)).BeginInit();
             this.SuspendLayout();
@@ -50,22 +51,23 @@
             // 
             this.panel1.Controls.Add(this.dataGridViewDelete);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 225);
+            this.panel1.Location = new System.Drawing.Point(0, 289);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 225);
+            this.panel1.Size = new System.Drawing.Size(862, 225);
             this.panel1.TabIndex = 0;
             // 
             // dataGridViewDelete
             // 
             this.dataGridViewDelete.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDelete.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewDelete.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewDelete.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDelete.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewDelete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -79,8 +81,8 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDelete.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewDelete.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -90,7 +92,7 @@
             this.dataGridViewDelete.RowHeadersWidth = 51;
             this.dataGridViewDelete.RowTemplate.Height = 24;
             this.dataGridViewDelete.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDelete.Size = new System.Drawing.Size(800, 225);
+            this.dataGridViewDelete.Size = new System.Drawing.Size(862, 225);
             this.dataGridViewDelete.TabIndex = 1;
             this.dataGridViewDelete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelete_CellContentClick);
             // 
@@ -131,7 +133,7 @@
             // 
             // DeleteDatePicker
             // 
-            this.DeleteDatePicker.Location = new System.Drawing.Point(240, 89);
+            this.DeleteDatePicker.Location = new System.Drawing.Point(415, 190);
             this.DeleteDatePicker.Name = "DeleteDatePicker";
             this.DeleteDatePicker.Size = new System.Drawing.Size(213, 22);
             this.DeleteDatePicker.TabIndex = 12;
@@ -139,17 +141,17 @@
             // DateLabel
             // 
             this.DateLabel.AutoSize = true;
-            this.DateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLabel.Location = new System.Drawing.Point(28, 79);
+            this.DateLabel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
+            this.DateLabel.Location = new System.Drawing.Point(200, 180);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(79, 32);
+            this.DateLabel.Size = new System.Drawing.Size(74, 35);
             this.DateLabel.TabIndex = 11;
             this.DateLabel.Text = "Date";
             // 
             // DeleteNameTextBox
             // 
             this.DeleteNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DeleteNameTextBox.Location = new System.Drawing.Point(240, 31);
+            this.DeleteNameTextBox.Location = new System.Drawing.Point(415, 135);
             this.DeleteNameTextBox.Name = "DeleteNameTextBox";
             this.DeleteNameTextBox.Size = new System.Drawing.Size(213, 30);
             this.DeleteNameTextBox.TabIndex = 10;
@@ -157,34 +159,50 @@
             // EventNameLabel
             // 
             this.EventNameLabel.AutoSize = true;
-            this.EventNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventNameLabel.Location = new System.Drawing.Point(28, 31);
+            this.EventNameLabel.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
+            this.EventNameLabel.Location = new System.Drawing.Point(200, 130);
             this.EventNameLabel.Name = "EventNameLabel";
-            this.EventNameLabel.Size = new System.Drawing.Size(180, 32);
+            this.EventNameLabel.Size = new System.Drawing.Size(169, 35);
             this.EventNameLabel.TabIndex = 9;
             this.EventNameLabel.Text = "Event Name";
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(515, 54);
+            this.DeleteButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.DeleteButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteButton.Location = new System.Drawing.Point(693, 156);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(104, 43);
+            this.DeleteButton.Size = new System.Drawing.Size(118, 34);
             this.DeleteButton.TabIndex = 13;
             this.DeleteButton.Text = "Delete Event";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(42, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 37);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DeleteEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(862, 514);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.DeleteDatePicker);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.DeleteNameTextBox);
             this.Controls.Add(this.EventNameLabel);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteEventForm";
             this.Text = "DeleteEventForm";
             this.Load += new System.EventHandler(this.DeleteEventForm_Load);
@@ -209,5 +227,6 @@
         private System.Windows.Forms.TextBox DeleteNameTextBox;
         private System.Windows.Forms.Label EventNameLabel;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -45,6 +45,7 @@
             this.DayRadioButton = new System.Windows.Forms.RadioButton();
             this.WeekRadioButton = new System.Windows.Forms.RadioButton();
             this.AllEventsRadioButton = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDisplay)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -53,13 +54,14 @@
             // 
             this.dataGridViewDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDisplay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewDisplay.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewDisplay.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDisplay.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -73,8 +75,8 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewDisplay.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -125,19 +127,20 @@
             // DisplayButton
             // 
             this.DisplayButton.AutoSize = true;
-            this.DisplayButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DisplayButton.Location = new System.Drawing.Point(474, 64);
+            this.DisplayButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.DisplayButton.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DisplayButton.Location = new System.Drawing.Point(679, 145);
             this.DisplayButton.Name = "DisplayButton";
-            this.DisplayButton.Size = new System.Drawing.Size(121, 41);
+            this.DisplayButton.Size = new System.Drawing.Size(130, 49);
             this.DisplayButton.TabIndex = 1;
             this.DisplayButton.Text = "Display";
-            this.DisplayButton.UseVisualStyleBackColor = true;
+            this.DisplayButton.UseVisualStyleBackColor = false;
             this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePicker.Location = new System.Drawing.Point(69, 77);
+            this.dateTimePicker.Location = new System.Drawing.Point(161, 145);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker.TabIndex = 2;
@@ -145,18 +148,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(291, 39);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(416, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 17);
+            this.label1.Size = new System.Drawing.Size(186, 26);
             this.label1.TabIndex = 4;
             this.label1.Text = "Day/Week events";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 39);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(156, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 17);
+            this.label2.Size = new System.Drawing.Size(60, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "Date";
             // 
@@ -173,9 +178,10 @@
             // DayRadioButton
             // 
             this.DayRadioButton.AutoSize = true;
-            this.DayRadioButton.Location = new System.Drawing.Point(294, 77);
+            this.DayRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DayRadioButton.Location = new System.Drawing.Point(421, 145);
             this.DayRadioButton.Name = "DayRadioButton";
-            this.DayRadioButton.Size = new System.Drawing.Size(141, 21);
+            this.DayRadioButton.Size = new System.Drawing.Size(145, 22);
             this.DayRadioButton.TabIndex = 11;
             this.DayRadioButton.TabStop = true;
             this.DayRadioButton.Text = "Events of the Day";
@@ -184,9 +190,10 @@
             // WeekRadioButton
             // 
             this.WeekRadioButton.AutoSize = true;
-            this.WeekRadioButton.Location = new System.Drawing.Point(294, 104);
+            this.WeekRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.WeekRadioButton.Location = new System.Drawing.Point(421, 172);
             this.WeekRadioButton.Name = "WeekRadioButton";
-            this.WeekRadioButton.Size = new System.Drawing.Size(152, 21);
+            this.WeekRadioButton.Size = new System.Drawing.Size(158, 22);
             this.WeekRadioButton.TabIndex = 12;
             this.WeekRadioButton.TabStop = true;
             this.WeekRadioButton.Text = "Events of the Week";
@@ -195,20 +202,35 @@
             // AllEventsRadioButton
             // 
             this.AllEventsRadioButton.AutoSize = true;
-            this.AllEventsRadioButton.Location = new System.Drawing.Point(294, 131);
+            this.AllEventsRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.AllEventsRadioButton.Location = new System.Drawing.Point(421, 199);
             this.AllEventsRadioButton.Name = "AllEventsRadioButton";
-            this.AllEventsRadioButton.Size = new System.Drawing.Size(90, 21);
+            this.AllEventsRadioButton.Size = new System.Drawing.Size(91, 22);
             this.AllEventsRadioButton.TabIndex = 13;
             this.AllEventsRadioButton.TabStop = true;
             this.AllEventsRadioButton.Text = "All events";
             this.AllEventsRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold);
+            this.button1.Location = new System.Drawing.Point(42, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(77, 37);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DisplayEventsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(862, 514);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.AllEventsRadioButton);
             this.Controls.Add(this.WeekRadioButton);
             this.Controls.Add(this.DayRadioButton);
@@ -244,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn EventDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn EventDescription;
+        private System.Windows.Forms.Button button1;
     }
 }

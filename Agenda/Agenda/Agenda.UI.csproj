@@ -152,6 +152,7 @@
     <Content Include="Images\account_image.png" />
     <Content Include="Images\error.png" />
     <Content Include="Images\Password.png" />
+    <Content Include="Images\planner-text-notebook-pencil-agenda-planner-512.png" />
     <Content Include="Images\sign-in.png" />
     <Content Include="Images\user.png" />
     <Content Include="Images\whaat.png" />

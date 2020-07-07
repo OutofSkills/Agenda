@@ -125,5 +125,50 @@ namespace AgendaForms
             return Convert.ToDateTime(v);
         }
         #endregion
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void EventNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdEventNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdDescriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DescriptionLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
