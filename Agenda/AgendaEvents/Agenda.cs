@@ -61,7 +61,7 @@ namespace DBDataAccess
                 }
                 else if (dayOrWeek.ToLower() == "all")
                 {
-                    events = context.Events.Where(e => e.Date >= DateTime.Now).ToList();
+                    events = context.Events.Where(e => e.Id > 0).ToList();
                 }
             }catch(Exception e)
             {
