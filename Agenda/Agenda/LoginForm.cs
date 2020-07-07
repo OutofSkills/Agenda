@@ -6,6 +6,8 @@ namespace AgendaForms
 {
     public partial class LoginForm : Form
     {
+        Point lastPoint;
+
         /// <summary>
         /// LoginForm Constructor
         /// </summary>
@@ -26,20 +28,28 @@ namespace AgendaForms
   
             if (security.ValidateUser(UsernameTextBox.Text, PasswordTextBox.Text))
             {
-                AgendaMenu menu = new AgendaMenu();
-                menu.Show();
-                this.Visible = false;
+                OpenAgendaApplication();
             }
             else
             {
-                WrongCredentials errorWindow = new WrongCredentials();
-                errorWindow.Show();
-            }    
+                ShowLoginError();
+            }
         }
-        
+
         #endregion
 
         #region tools
+        private void OpenAgendaApplication()
+        {
+            AgendaMenu menu = new AgendaMenu();
+            menu.Show();
+            this.Visible = false;
+        }
+        private static void ShowLoginError()
+        {
+            WrongCredentials errorWindow = new WrongCredentials();
+            errorWindow.Show();
+        }
         private void UsernameTextBox_Enter(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -55,10 +65,7 @@ namespace AgendaForms
                 SignInButton.Focus();
             }
         }
-        #endregion
-
-      
-
+       
         private void ExitMenuButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -68,9 +75,6 @@ namespace AgendaForms
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-
-        Point lastPoint;
         private void LoginForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -84,5 +88,6 @@ namespace AgendaForms
         {
             lastPoint = new Point(e.X, e.Y);
         }
+        #endregion
     }
 }

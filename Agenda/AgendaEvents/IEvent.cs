@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DBDataAccess
 {
-    public interface IEvent
+    public interface IAgenda
     {
         void CreateEvent(string name, DateTime date, DateTime time, string description);
         void DeleteEvent(int id);

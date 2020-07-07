@@ -12,12 +12,12 @@ namespace AgendaForms
 {
     public partial class WrongCredentials : Form
     {
+        Point lastPoint;
         public WrongCredentials()
         {
             InitializeComponent();
         }
 
-        Point lastPoint;
         private void WrongCredentialsPanel_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);

@@ -28,7 +28,7 @@ namespace AgendaForms
         /// <summary>
         /// Load the table with all events data
         /// </summary>
-        private void DisplayEvents()
+        private void GridDisplayEvents()
         {
             Agenda agenda = new Agenda();
             DisplayEventsForm displayEvents = new DisplayEventsForm();
@@ -77,16 +77,12 @@ namespace AgendaForms
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             Agenda agenda = new Agenda();
-            if (id != default)
-            {
-                agenda.DeleteEvent(id);
-            }
-            else
-            {
-                ShowError("No selected item to delete");
-            }
 
-                ReloadTable();
+            if (id == default)
+             ShowError("No selected item to delete");
+            
+            agenda.DeleteEvent(id);
+            ReloadTable();
         }
 
         #region Tools
@@ -106,7 +102,7 @@ namespace AgendaForms
         private void ReloadTable()
         {
             dataGridViewDelete.Rows.Clear();
-            DisplayEvents();
+            GridDisplayEvents();
             dataGridViewDelete.Update();
         }
         #endregion
