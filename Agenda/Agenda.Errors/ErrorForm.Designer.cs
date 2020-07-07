@@ -49,6 +49,7 @@
             this.ClientSize = new System.Drawing.Size(525, 197);
             this.Controls.Add(this.ErrorLabel);
             this.Name = "ErrorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ErrorForm";
             this.ResumeLayout(false);
 

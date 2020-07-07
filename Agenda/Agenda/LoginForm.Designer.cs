@@ -236,6 +236,7 @@
             this.MaximumSize = new System.Drawing.Size(500, 550);
             this.MinimumSize = new System.Drawing.Size(500, 550);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.LoginForm_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

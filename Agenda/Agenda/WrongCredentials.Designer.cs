@@ -122,6 +122,7 @@
             this.MaximumSize = new System.Drawing.Size(450, 200);
             this.MinimumSize = new System.Drawing.Size(400, 200);
             this.Name = "WrongCredentials";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WrongCredentials";
             this.WrongCredentialsPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
