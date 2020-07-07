@@ -14,6 +14,11 @@ namespace AgendaForms
     public partial class AgendaMenu : Form
     {
         private Form activeForm = null;
+        Point lastPoint;
+
+        /// <summary>
+        /// Class Contructor
+        /// </summary>
         public AgendaMenu()
         {
             InitializeComponent();
@@ -28,8 +33,7 @@ namespace AgendaForms
             this.WindowState = FormWindowState.Minimized;
         }
 
-
-        Point lastPoint;
+        #region Move window tools
         private void AgendaMenu_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -38,15 +42,21 @@ namespace AgendaForms
                 this.Top += e.Y - lastPoint.Y;
             }
         }
-
         private void AgendaMenu_MouseDown(object sender, MouseEventArgs e)
         {
             lastPoint = new Point(e.X, e.Y);
         }
+        #endregion
+
+        /// <summary>
+        /// Will change current menu window to the one selected by user
+        /// </summary>
+        /// <param name="childForm"></param>
         private void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
                 activeForm.Close();
+
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -54,9 +64,10 @@ namespace AgendaForms
             panelChildForm.Controls.Add(childForm);
             panelChildForm.Tag = childForm;
             childForm.BringToFront();
+
             childForm.Show();
         }
-
+        #region Agenda menu features windows
         private void CreateButton_Click(object sender, EventArgs e)
         {
             OpenChildForm(new CreateEventForm());
@@ -76,5 +87,6 @@ namespace AgendaForms
         {
             OpenChildForm(new DeleteEventForm());
         }
+        #endregion
     }
 }

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-
+using System.Windows.Forms;
 
 namespace DBDataAccess
 {
@@ -18,18 +18,24 @@ namespace DBDataAccess
         /// <param name="description"></param>
         public void CreateEvent(string name, DateTime date, DateTime time, string description)
         {
-            using (var context = new AgendaEntities())
+            try
             {
-                var evnt = new Event()
+                using (var context = new AgendaEntities())
                 {
-                    Name = name,
-                    Date = date,
-                    Time = time.TimeOfDay,
-                    Description = description
-                };
-                context.Events.Add(evnt);
+                    var evnt = new Event()
+                    {
+                        Name = name,
+                        Date = date,
+                        Time = time.TimeOfDay,
+                        Description = description
+                    };
+                    context.Events.Add(evnt);
 
-                context.SaveChanges();
+                    context.SaveChanges();
+                }
+            }catch(Exception e)
+            {
+                MessageBox.Show("Exception Details: " + e);
             }
         }
         /// <summary>
@@ -43,20 +49,24 @@ namespace DBDataAccess
             List<Event> events = null;
             AgendaEntities context = new AgendaEntities();
             DateTime limitDate = date.Date.AddDays(7);
-            
-            if (dayOrWeek.ToLower() == "day")
+            try
             {
-               events = context.Events.Where(e => e.Date == date.Date).ToList();
-            }
-            else if(dayOrWeek.ToLower() == "week")
+                if (dayOrWeek.ToLower() == "day")
+                {
+                    events = context.Events.Where(e => e.Date == date.Date).ToList();
+                }
+                else if (dayOrWeek.ToLower() == "week")
+                {
+                    events = context.Events.Where(e => e.Date >= date.Date.Date && e.Date < limitDate.Date).ToList();
+                }
+                else if (dayOrWeek.ToLower() == "all")
+                {
+                    events = context.Events.Where(e => e.Date >= DateTime.Now).ToList();
+                }
+            }catch(Exception e)
             {
-                events = context.Events.Where(e => e.Date >= date.Date.Date && e.Date < limitDate.Date).ToList();
+                MessageBox.Show("Exception Details: " + e);
             }
-            else if(dayOrWeek.ToLower() == "all")
-            {
-                events = context.Events.Where(e => e.Date >= DateTime.Now).ToList();
-            }
-
             return events;
         }
 
@@ -70,18 +80,24 @@ namespace DBDataAccess
         /// <param name="description"></param>
         public void UpdateEvent(int id, string name, DateTime date, DateTime time, string description)
         {
-            using (var context = new AgendaEntities())
+            try
             {
-                var evnt = context.Events.SingleOrDefault(e=>e.Id == id);
-                if(evnt != null)
+                using (var context = new AgendaEntities())
                 {
-                    evnt.Name = name;
-                    evnt.Date = date;
-                    evnt.Time = time.TimeOfDay;
-                    evnt.Description = description;
+                    var evnt = context.Events.SingleOrDefault(e => e.Id == id);
+                    if (evnt != null)
+                    {
+                        evnt.Name = name;
+                        evnt.Date = date;
+                        evnt.Time = time.TimeOfDay;
+                        evnt.Description = description;
 
-                    context.SaveChanges();
+                        context.SaveChanges();
+                    }
                 }
+            }catch(Exception e)
+            {
+                MessageBox.Show("Exception Details: " + e);
             }
         }
         /// <summary>
@@ -92,12 +108,18 @@ namespace DBDataAccess
         {
             AgendaEntities context = new AgendaEntities();
 
-            var eventToRemove = context.Events.FirstOrDefault(e=>e.Id == id);
-
-            if (eventToRemove != null)
+            try
             {
-                context.Events.Remove(eventToRemove);
-                context.SaveChanges();
+                var eventToRemove = context.Events.FirstOrDefault(e => e.Id == id);
+
+                if (eventToRemove != null)
+                {
+                    context.Events.Remove(eventToRemove);
+                    context.SaveChanges();
+                }
+            }catch(Exception e)
+            {
+                MessageBox.Show("Exception Details: " + e);
             }
         }
     }
