@@ -16,6 +16,7 @@ namespace AgendaForms
 {
     public partial class UpdateEventForm : Form
     {
+        ErrorForm errorForm;
         private int id;
         /// <summary>
         /// Class constructor
@@ -108,9 +109,11 @@ namespace AgendaForms
         #region Tools
         private void ShowError(string v)
         {
-            ErrorForm errorWindow= new ErrorForm();
-            errorWindow.setLabelText(v);
-            errorWindow.Show();
+            if(errorForm == null)
+               errorForm = new ErrorForm();
+
+            errorForm.setLabelText(v);
+            errorForm.ShowDialog();
         }
 
         private void ReloadTable()
@@ -129,46 +132,6 @@ namespace AgendaForms
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void EventNameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UpdEventNameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UpdDatePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TimeLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UpdTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UpdDescriptionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DescriptionLabel_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

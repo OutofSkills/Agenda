@@ -8,6 +8,7 @@ namespace AgendaForms
 {
     public partial class DisplayEventsForm : Form
     {
+        ErrorForm errorForm;
         /// <summary>
         /// Form Constructor
         /// </summary>
@@ -87,9 +88,12 @@ namespace AgendaForms
 
         private void ShowError(string v)
         {
-            ErrorForm errorForm = new ErrorForm();
+            if (errorForm == null)
+            {
+                errorForm = new ErrorForm();
+            }
             errorForm.setLabelText(v);
-            errorForm.Show();
+            errorForm.ShowDialog();
         }
 
         public string ConvertDateFormat(DateTime date)
@@ -101,11 +105,11 @@ namespace AgendaForms
         {
             return time.ToString(@"hh\:mm\:ss");
         }
-        #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }

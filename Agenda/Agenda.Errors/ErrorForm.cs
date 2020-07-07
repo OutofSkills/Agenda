@@ -16,6 +16,10 @@ namespace AgendaErrors
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Set an error message in the Error Label
+        /// </summary>
+        /// <param name="error"></param>
         public void setLabelText(string error)
         {
             if(error!=string.Empty)

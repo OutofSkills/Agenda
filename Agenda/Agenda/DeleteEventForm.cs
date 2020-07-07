@@ -9,6 +9,7 @@ namespace AgendaForms
     public partial class DeleteEventForm : Form
     {
         private int id;
+        ErrorForm errorForm;
         /// <summary>
         /// Class contructor
         /// </summary>
@@ -88,9 +89,12 @@ namespace AgendaForms
         #region Tools
         private void ShowError(string v)
         {
-            ErrorForm errorWindow = new ErrorForm();
-            errorWindow.setLabelText(v);
-            errorWindow.Show();
+            if (errorForm == null)
+            {
+                errorForm = new ErrorForm();
+            }
+            errorForm.setLabelText(v);
+            errorForm.ShowDialog();
         }
         private DateTime ConvertToDate(string v)
         {

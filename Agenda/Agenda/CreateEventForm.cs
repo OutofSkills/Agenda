@@ -7,6 +7,7 @@ namespace AgendaForms
 {
     public partial class CreateEventForm : Form
     {
+        ErrorForm errorWindow;
         public CreateEventForm()
         {
             InitializeComponent();
@@ -56,9 +57,12 @@ namespace AgendaForms
         /// <param name="v"></param>
         private void ShowErrorWindow(string v)
         {
-            ErrorForm errorWindow = new ErrorForm();
+            if (errorWindow == null)
+            {
+                errorWindow = new ErrorForm();
+            }
             errorWindow.setLabelText(v);
-            errorWindow.Show();
+            errorWindow.ShowDialog();
         }
         private void InitializeTimePicker()
         {

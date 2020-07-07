@@ -7,7 +7,7 @@ namespace AgendaForms
     public partial class LoginForm : Form
     {
         Point lastPoint;
-
+        static WrongCredentials errorWindow;
         /// <summary>
         /// LoginForm Constructor
         /// </summary>
@@ -47,8 +47,9 @@ namespace AgendaForms
         }
         private static void ShowLoginError()
         {
-            WrongCredentials errorWindow = new WrongCredentials();
-            errorWindow.Show();
+            if(errorWindow == null)
+                errorWindow = new WrongCredentials();
+            errorWindow.ShowDialog();
         }
         private void UsernameTextBox_Enter(object sender, KeyEventArgs e)
         {

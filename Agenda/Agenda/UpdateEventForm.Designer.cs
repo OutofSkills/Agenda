@@ -142,7 +142,6 @@
             this.UpdEventNameTextBox.Name = "UpdEventNameTextBox";
             this.UpdEventNameTextBox.Size = new System.Drawing.Size(213, 30);
             this.UpdEventNameTextBox.TabIndex = 6;
-            this.UpdEventNameTextBox.TextChanged += new System.EventHandler(this.UpdEventNameTextBox_TextChanged);
             // 
             // EventNameLabel
             // 
@@ -153,7 +152,6 @@
             this.EventNameLabel.Size = new System.Drawing.Size(169, 35);
             this.EventNameLabel.TabIndex = 5;
             this.EventNameLabel.Text = "Event Name";
-            this.EventNameLabel.Click += new System.EventHandler(this.EventNameLabel_Click);
             // 
             // UpdDatePicker
             // 
@@ -161,7 +159,6 @@
             this.UpdDatePicker.Name = "UpdDatePicker";
             this.UpdDatePicker.Size = new System.Drawing.Size(213, 22);
             this.UpdDatePicker.TabIndex = 8;
-            this.UpdDatePicker.ValueChanged += new System.EventHandler(this.UpdDatePicker_ValueChanged);
             // 
             // DateLabel
             // 
@@ -172,7 +169,6 @@
             this.DateLabel.Size = new System.Drawing.Size(74, 35);
             this.DateLabel.TabIndex = 7;
             this.DateLabel.Text = "Date";
-            this.DateLabel.Click += new System.EventHandler(this.DateLabel_Click);
             // 
             // UpdTimePicker
             // 
@@ -183,7 +179,6 @@
             this.UpdTimePicker.ShowUpDown = true;
             this.UpdTimePicker.Size = new System.Drawing.Size(213, 22);
             this.UpdTimePicker.TabIndex = 10;
-            this.UpdTimePicker.ValueChanged += new System.EventHandler(this.UpdTimePicker_ValueChanged);
             // 
             // TimeLabel
             // 
@@ -194,7 +189,6 @@
             this.TimeLabel.Size = new System.Drawing.Size(79, 35);
             this.TimeLabel.TabIndex = 9;
             this.TimeLabel.Text = "Time";
-            this.TimeLabel.Click += new System.EventHandler(this.TimeLabel_Click);
             // 
             // UpdDescriptionTextBox
             // 
@@ -204,7 +198,6 @@
             this.UpdDescriptionTextBox.Name = "UpdDescriptionTextBox";
             this.UpdDescriptionTextBox.Size = new System.Drawing.Size(213, 57);
             this.UpdDescriptionTextBox.TabIndex = 12;
-            this.UpdDescriptionTextBox.TextChanged += new System.EventHandler(this.UpdDescriptionTextBox_TextChanged);
             // 
             // DescriptionLabel
             // 
@@ -215,7 +208,6 @@
             this.DescriptionLabel.Size = new System.Drawing.Size(161, 35);
             this.DescriptionLabel.TabIndex = 11;
             this.DescriptionLabel.Text = "Description";
-            this.DescriptionLabel.Click += new System.EventHandler(this.DescriptionLabel_Click);
             // 
             // UpdateButton
             // 
