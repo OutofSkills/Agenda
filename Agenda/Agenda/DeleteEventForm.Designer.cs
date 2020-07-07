@@ -133,6 +133,7 @@
             // 
             // DeleteDatePicker
             // 
+            this.DeleteDatePicker.Enabled = false;
             this.DeleteDatePicker.Location = new System.Drawing.Point(415, 190);
             this.DeleteDatePicker.Name = "DeleteDatePicker";
             this.DeleteDatePicker.Size = new System.Drawing.Size(213, 22);
@@ -153,6 +154,7 @@
             this.DeleteNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DeleteNameTextBox.Location = new System.Drawing.Point(415, 135);
             this.DeleteNameTextBox.Name = "DeleteNameTextBox";
+            this.DeleteNameTextBox.ReadOnly = true;
             this.DeleteNameTextBox.Size = new System.Drawing.Size(213, 30);
             this.DeleteNameTextBox.TabIndex = 10;
             // 

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.UI", "Agenda\Agenda.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.DBDataAccess", "AgendaEvents\Agenda.DBDataAccess.csproj", "{98E89E92-A168-4A72-BA9B-CF68D0AD2FBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.UI.Errors", "Agenda.Errors\Agenda.UI.Errors.csproj", "{A475F963-4EF6-49EA-BE28-8C90552C1ADA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agenda.UI.Dialog", "Agenda.Errors\Agenda.UI.Dialog.csproj", "{A475F963-4EF6-49EA-BE28-8C90552C1ADA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

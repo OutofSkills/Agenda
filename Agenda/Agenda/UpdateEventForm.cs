@@ -17,12 +17,15 @@ namespace AgendaForms
     public partial class UpdateEventForm : Form
     {
         ErrorForm errorForm;
+        SuccesWindow succesWindow;
+        CEvent _event;
         /// <summary>
         /// Class constructor
         /// </summary>
         public UpdateEventForm()
         {
             InitializeComponent();
+            _event = new CEvent();
         }
         /// <summary>
         /// Display the selected row's data in the editing part
@@ -31,7 +34,6 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void dataGridViewUpdate_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CEvent _event = new CEvent();
             if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridViewUpdate.Rows[e.RowIndex];
@@ -89,7 +91,6 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            CEvent _event = new CEvent();
             Agenda agenda = new Agenda();
 
             _event.name = UpdEventNameTextBox.Text;
@@ -101,12 +102,22 @@ namespace AgendaForms
                 ShowError("No selected item to update");
             else if (_event.date.Date < DateTime.Now.Date)
                 ShowError("Invalid introduced date");
-
-            agenda.UpdateEvent(_event.id, _event.name, _event.date, _event.time, _event.description);
+            else
+            {
+                agenda.UpdateEvent(_event.id, _event.name, _event.date, _event.time, _event.description);
+                ShowSuccess("Event successfully modified");
+            }
             ReloadWindow();
         }
 
         #region Tools
+        private void ShowSuccess(string v)
+        {
+            if (succesWindow == null)
+                succesWindow = new SuccesWindow();
+            succesWindow.SetSuccessLabel(v);
+            succesWindow.ShowDialog();
+        }
         private void ShowError(string v)
         {
             if(errorForm == null)
@@ -122,6 +133,8 @@ namespace AgendaForms
             AddEventsToTable();
             dataGridViewUpdate.Update();
 
+            UpdEventNameTextBox.ResetText();
+            UpdDescriptionTextBox.ResetText();
             UpdDatePicker.Value = DateTimePicker.MinimumDateTime;
             UpdTimePicker.Value = DateTimePicker.MinimumDateTime;
         }

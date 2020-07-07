@@ -10,6 +10,7 @@ namespace AgendaForms
     {
         private int id;
         ErrorForm errorForm;
+        SuccesWindow succesWindow;
         /// <summary>
         /// Class contructor
         /// </summary>
@@ -24,7 +25,7 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void DeleteEventForm_Load(object sender, EventArgs e)
         {
-            ReloadTable();
+            ReloadWindow();
         }
         /// <summary>
         /// Load the table with all events data
@@ -80,10 +81,20 @@ namespace AgendaForms
             Agenda agenda = new Agenda();
 
             if (id == default)
-             ShowError("No selected item to delete");
+                ShowError("No selected item to delete");
+            else
+                ShowSuccess("Event successfully deleted");
             
             agenda.DeleteEvent(id);
-            ReloadTable();
+            ReloadWindow();
+        }
+
+        private void ShowSuccess(string v)
+        {
+            if(succesWindow == null)
+                succesWindow = new SuccesWindow();
+            succesWindow.SetSuccessLabel(v);
+            succesWindow.ShowDialog();
         }
 
         #region Tools
@@ -103,11 +114,13 @@ namespace AgendaForms
         /// <summary>
         /// Reload the data from the table
         /// </summary>
-        private void ReloadTable()
+        private void ReloadWindow()
         {
             dataGridViewDelete.Rows.Clear();
             GridDisplayEvents();
             dataGridViewDelete.Update();
+            DeleteNameTextBox.ResetText();
+            DeleteDatePicker.Value = DateTimePicker.MinimumDateTime;
         }
 
         private void button1_Click(object sender, EventArgs e)

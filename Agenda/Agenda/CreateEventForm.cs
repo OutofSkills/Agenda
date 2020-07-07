@@ -10,6 +10,7 @@ namespace AgendaForms
     public partial class CreateEventForm : Form
     {
         ErrorForm errorWindow;
+        SuccesWindow succesWindow;
         public CreateEventForm()
         {
             InitializeComponent();
@@ -40,12 +41,23 @@ namespace AgendaForms
             _event.time = TimePicker.Value;
             _event.description = DescriptionTextBox.Text;
 
-            if(_event.name != string.Empty && _event.date.Date >= DateTime.Now.Date)
+            if (_event.name != string.Empty && _event.date.Date >= DateTime.Now.Date)
+            {
                 agenda.CreateEvent(_event.name, _event.date, _event.time, _event.description);
+                ShowSuccess("Event successfully created");
+            }
             else
-                ShowErrorWindow("Invalid provided event data");
+                ShowError("Invalid provided event data");
 
             ClearFields();
+        }
+
+        private void ShowSuccess(string v)
+        {
+            if(succesWindow == null)
+                succesWindow = new SuccesWindow();
+            succesWindow.SetSuccessLabel(v);
+            succesWindow.ShowDialog();
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -58,7 +70,7 @@ namespace AgendaForms
         /// Will open a window with an error text wether there is a error
         /// </summary>
         /// <param name="v"></param>
-        private void ShowErrorWindow(string v)
+        private void ShowError(string v)
         {
             if (errorWindow == null)
             {
