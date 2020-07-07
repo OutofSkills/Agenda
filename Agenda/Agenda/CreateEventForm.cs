@@ -1,6 +1,8 @@
 ﻿using AgendaErrors;
+using AgendaEvents;
 using DBDataAccess;
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace AgendaForms
@@ -21,6 +23,7 @@ namespace AgendaForms
         private void CreateEventForm_Load(object sender, EventArgs e)
         {
             InitializeTimePicker();
+            InitializeDatePicker();
         }
 
         /// <summary>
@@ -30,21 +33,21 @@ namespace AgendaForms
         private void CreateNewEvent()
         {
             Agenda agenda = new Agenda();
+            CEvent _event = new CEvent();
 
-            string name = EventNameTextBox.Text;
-            DateTime date = DatePicker.Value;
-            DateTime time = TimePicker.Value;
-            string description = DescriptionTextBox.Text;
+            _event.name = EventNameTextBox.Text;
+            _event.date = DatePicker.Value;
+            _event.time = TimePicker.Value;
+            _event.description = DescriptionTextBox.Text;
 
-            if(name == string.Empty || date == default || time == default)
+            if(_event.name != string.Empty && _event.date.Date >= DateTime.Now.Date)
+                agenda.CreateEvent(_event.name, _event.date, _event.time, _event.description);
+            else
                 ShowErrorWindow("Invalid provided event data");
-            else if (date < DateTime.Now.Date)
-                ShowErrorWindow("Invalid introduced date");
 
-            agenda.CreateEvent(name, date, time, description);
-            
             ClearFields();
         }
+
         private void CreateButton_Click(object sender, EventArgs e)
         {
             CreateNewEvent();
@@ -67,6 +70,11 @@ namespace AgendaForms
         private void InitializeTimePicker()
         {
             TimePicker.CustomFormat = "HH:mm";
+            TimePicker.Value = DateTimePicker.MinimumDateTime;
+        }
+        private void InitializeDatePicker()
+        {
+            DatePicker.Value = DateTimePicker.MinimumDateTime;
         }
         /// <summary>
         /// Will clean all the text fields 
@@ -74,15 +82,15 @@ namespace AgendaForms
         private void ClearFields()
         {
             EventNameTextBox.Clear();
-            DatePicker.ResetText();
-            TimePicker.ResetText();
+            InitializeDatePicker();
+            InitializeTimePicker();
             DescriptionTextBox.Clear();
         }
-        #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }

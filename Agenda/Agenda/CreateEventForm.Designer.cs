@@ -1,4 +1,7 @@
-﻿namespace AgendaForms
+﻿using System;
+using System.Windows.Forms;
+
+namespace AgendaForms
 {
     partial class CreateEventForm
     {
@@ -102,6 +105,7 @@
             // 
             // DatePicker
             // 
+            this.DatePicker.Value = DateTimePicker.MinimumDateTime;
             this.DatePicker.Location = new System.Drawing.Point(425, 208);
             this.DatePicker.Name = "DatePicker";
             this.DatePicker.Size = new System.Drawing.Size(213, 22);
@@ -109,6 +113,7 @@
             // 
             // TimePicker
             // 
+            this.TimePicker.Value = DateTimePicker.MinimumDateTime;
             this.TimePicker.CustomFormat = " ";
             this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimePicker.Location = new System.Drawing.Point(425, 268);

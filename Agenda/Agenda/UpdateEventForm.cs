@@ -17,7 +17,6 @@ namespace AgendaForms
     public partial class UpdateEventForm : Form
     {
         ErrorForm errorForm;
-        private int id;
         /// <summary>
         /// Class constructor
         /// </summary>
@@ -32,14 +31,14 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void dataGridViewUpdate_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            CEvent _event = new CEvent();
             if(e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridViewUpdate.Rows[e.RowIndex];
                 DateTime date = ConvertToDate(row.Cells["EventDate"].Value.ToString());
                 DateTime time = ConvertToDate(row.Cells["EventTime"].Value.ToString());
 
-                this.id = (int)row.Cells["EventID"].Value;
+                _event.id = (int)row.Cells["EventID"].Value;
                 UpdEventNameTextBox.Text = row.Cells["EventName"].Value.ToString();
                 UpdDatePicker.Value = date;
                 UpdTimePicker.Value = time;
@@ -53,13 +52,13 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void UpdateEventForm_Load(object sender, EventArgs e)
         {
-            ReloadTable();
+            ReloadWindow();
         }
 
         /// <summary>
         /// Load the table with all events data
         /// </summary>
-        private void DisplayEvents()
+        private void AddEventsToTable()
         {
             Agenda agenda = new Agenda();
             DisplayEventsForm displayEvents = new DisplayEventsForm();
@@ -90,20 +89,21 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            string name = UpdEventNameTextBox.Text;
-            DateTime date = UpdDatePicker.Value;
-            DateTime time = UpdTimePicker.Value;
-            string description = UpdDescriptionTextBox.Text;
+            CEvent _event = new CEvent();
+            Agenda agenda = new Agenda();
 
-            if (name == string.Empty || date == default || time == default)
+            _event.name = UpdEventNameTextBox.Text;
+            _event.date = UpdDatePicker.Value;
+            _event.time = UpdTimePicker.Value;
+            _event.description = UpdDescriptionTextBox.Text;
+
+            if (_event.name == string.Empty || _event.date == DateTimePicker.MinimumDateTime)
                 ShowError("No selected item to update");
-            else if (date < DateTime.Now.Date)
+            else if (_event.date.Date < DateTime.Now.Date)
                 ShowError("Invalid introduced date");
 
-                Agenda agenda = new Agenda();
-                agenda.UpdateEvent(this.id, name, date, time, description);
-
-                ReloadTable();
+            agenda.UpdateEvent(_event.id, _event.name, _event.date, _event.time, _event.description);
+            ReloadWindow();
         }
 
         #region Tools
@@ -116,22 +116,25 @@ namespace AgendaForms
             errorForm.ShowDialog();
         }
 
-        private void ReloadTable()
+        private void ReloadWindow()
         {
             dataGridViewUpdate.Rows.Clear();
-            DisplayEvents();
+            AddEventsToTable();
             dataGridViewUpdate.Update();
+
+            UpdDatePicker.Value = DateTimePicker.MinimumDateTime;
+            UpdTimePicker.Value = DateTimePicker.MinimumDateTime;
         }
 
         private DateTime ConvertToDate(string v)
         {
             return Convert.ToDateTime(v);
         }
-        #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }

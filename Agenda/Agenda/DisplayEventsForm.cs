@@ -29,7 +29,7 @@ namespace AgendaForms
             string intervalChoice = GetUserChoice();
             var availableEvents = agenda.GetEvents(date.Date, intervalChoice);
 
-            ReloadTable();
+            ReloadWindow();
 
             if (availableEvents != null)
                 for (int i = 0; i < availableEvents.Count; i++)
@@ -52,7 +52,7 @@ namespace AgendaForms
         /// <summary>
         /// Tool used to refresh the grid table
         /// </summary>
-        private void ReloadTable()
+        private void ReloadWindow()
         {
             dataGridViewDisplay.Rows.Clear();
             dataGridViewDisplay.Refresh();

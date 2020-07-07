@@ -109,11 +109,11 @@ namespace AgendaForms
             GridDisplayEvents();
             dataGridViewDelete.Update();
         }
-        #endregion
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }

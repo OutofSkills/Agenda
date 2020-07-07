@@ -66,6 +66,7 @@
     <Compile Include="AgendaMenu.Designer.cs">
       <DependentUpon>AgendaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="CEvent.cs" />
     <Compile Include="CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
