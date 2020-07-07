@@ -12,6 +12,11 @@ namespace AgendaForms
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Will change the DateTimePicker format to HH:mm time format
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateEventForm_Load(object sender, EventArgs e)
         {
             InitializeTimePicker();
@@ -34,12 +39,21 @@ namespace AgendaForms
                 ShowErrorWindow("Invalid provided event data");
             else if (date < DateTime.Now.Date)
                 ShowErrorWindow("Invalid introduced date");
-                agenda.CreateEvent(name, date, time, description);
+
+            agenda.CreateEvent(name, date, time, description);
             
             ClearFields();
         }
+        private void CreateButton_Click(object sender, EventArgs e)
+        {
+            CreateNewEvent();
+        }
 
         #region Tools
+        /// <summary>
+        /// Will open a window with an error text wether there is a error
+        /// </summary>
+        /// <param name="v"></param>
         private void ShowErrorWindow(string v)
         {
             ErrorForm errorWindow = new ErrorForm();
@@ -50,10 +64,9 @@ namespace AgendaForms
         {
             TimePicker.CustomFormat = "HH:mm";
         }
-        private void CreateButton_Click(object sender, EventArgs e)
-        {
-            CreateNewEvent();
-        }
+        /// <summary>
+        /// Will clean all the text fields 
+        /// </summary>
         private void ClearFields()
         {
             EventNameTextBox.Clear();
