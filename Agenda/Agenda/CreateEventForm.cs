@@ -35,7 +35,7 @@ namespace AgendaForms
             DateTime time = TimePicker.Value;
             string description = DescriptionTextBox.Text;
 
-            if(name != string.Empty || date != default || time != default)
+            if(name == string.Empty || date == default || time == default)
                 ShowErrorWindow("Invalid provided event data");
             else if (date < DateTime.Now.Date)
                 ShowErrorWindow("Invalid introduced date");
