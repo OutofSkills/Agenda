@@ -23,7 +23,7 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-            Agenda agenda = new Agenda();
+            CAgenda agenda = new CAgenda();
             DateTime date = dateTimePicker.Value;
 
             string intervalChoice = GetUserChoice();

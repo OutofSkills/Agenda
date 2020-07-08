@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DBDataAccess
 {
-    public class Agenda : IAgenda
+    public class CAgenda : IAgenda
     {
         /// <summary>
         /// Will add a record into the Database containing data that describes an agenda event

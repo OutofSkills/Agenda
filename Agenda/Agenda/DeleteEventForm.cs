@@ -32,7 +32,7 @@ namespace AgendaForms
         /// </summary>
         private void GridDisplayEvents()
         {
-            Agenda agenda = new Agenda();
+            IAgenda agenda = new CAgenda();
             DisplayEventsForm displayEvents = new DisplayEventsForm();
             DateTime date = DeleteDatePicker.Value;
 
@@ -78,7 +78,7 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Agenda agenda = new Agenda();
+            IAgenda agenda = new CAgenda();
 
             if (id == default)
                 ShowError("No selected item to delete");

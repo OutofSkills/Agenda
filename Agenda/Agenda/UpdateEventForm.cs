@@ -62,7 +62,7 @@ namespace AgendaForms
         /// </summary>
         private void AddEventsToTable()
         {
-            Agenda agenda = new Agenda();
+            IAgenda agenda = new CAgenda();
             DisplayEventsForm displayEvents = new DisplayEventsForm();
             DateTime date = UpdDatePicker.Value;
 
@@ -91,7 +91,7 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            Agenda agenda = new Agenda();
+            IAgenda agenda = new CAgenda();
 
             _event.name = UpdEventNameTextBox.Text;
             _event.date = UpdDatePicker.Value;

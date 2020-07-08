@@ -33,7 +33,7 @@ namespace AgendaForms
         /// </summary>
         private void CreateNewEvent()
         {
-            Agenda agenda = new Agenda();
+            IAgenda agenda = new CAgenda();
             CEvent _event = new CEvent();
 
             _event.name = EventNameTextBox.Text;
