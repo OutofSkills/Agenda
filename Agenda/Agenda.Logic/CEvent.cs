@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AgendaEvents
+namespace AgendaLogic
 {
     public class CEvent
     {
@@ -15,6 +15,9 @@ namespace AgendaEvents
         public DateTime time { set; get; }
         public string description { set; get; }
 
+        /// <summary>
+        /// Class constructor
+        /// </summary>
         public CEvent()
         {
             id = default;

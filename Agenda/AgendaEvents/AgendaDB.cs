@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace DBDataAccess
 {
-    public class CAgenda : IAgenda
+    public class AgendaDB : IAgendaDB
     {
         /// <summary>
         /// Will add a record into the Database containing data that describes an agenda event
@@ -16,7 +16,7 @@ namespace DBDataAccess
         /// <param name="date"></param>
         /// <param name="time"></param>
         /// <param name="description"></param>
-        public void CreateEvent(string name, DateTime date, DateTime time, string description)
+        public void AddRecordToDB(string name, DateTime date, DateTime time, string description)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace DBDataAccess
         /// <param name="date"></param>
         /// <param name="dayOrWeek"></param>
         /// <returns></returns>
-        public List<Event> GetEvents(DateTime date, string dayOrWeek)
+        public List<Event> GetRecordsFromDB(DateTime date, string dayOrWeek)
         {
             List<Event> events = null;
             AgendaEntities context = new AgendaEntities();
@@ -78,7 +78,7 @@ namespace DBDataAccess
         /// <param name="date"></param>
         /// <param name="time"></param>
         /// <param name="description"></param>
-        public void UpdateEvent(int id, string name, DateTime date, DateTime time, string description)
+        public void UpdateRecord(int id, string name, DateTime date, DateTime time, string description)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace DBDataAccess
         /// Will delete a record(event) from the database based on a given ID
         /// </summary>
         /// <param name="id"></param>
-        public void DeleteEvent(int id)
+        public void DeleteRecordFromDB(int id)
         {
             AgendaEntities context = new AgendaEntities();
 

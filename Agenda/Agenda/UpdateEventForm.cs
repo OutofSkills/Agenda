@@ -1,24 +1,17 @@
 ﻿using AgendaErrors;
-using AgendaEvents;
+using AgendaLogic;
 using DBDataAccess;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AgendaForms
 {
     public partial class UpdateEventForm : Form
     {
+        CEvent _event;
         ErrorForm errorForm;
         SuccesWindow succesWindow;
-        CEvent _event;
+        
         /// <summary>
         /// Class constructor
         /// </summary>
@@ -60,7 +53,7 @@ namespace AgendaForms
         /// <summary>
         /// Load the table with all events data
         /// </summary>
-        private void AddEventsToTable()
+        private void AddDataToTable()
         {
             IAgenda agenda = new CAgenda();
             DisplayEventsForm displayEvents = new DisplayEventsForm();
@@ -98,15 +91,13 @@ namespace AgendaForms
             _event.time = UpdTimePicker.Value;
             _event.description = UpdDescriptionTextBox.Text;
 
-            if (_event.name == string.Empty || _event.date == DateTimePicker.MinimumDateTime)
-                ShowError("No selected item or invalid event data");
-            else if (_event.date.Date < DateTime.Now.Date)
-                ShowError("Invalid introduced date");
-            else
-            {
-                agenda.UpdateEvent(_event.id, _event.name, _event.date, _event.time, _event.description);
+            bool validate = agenda.EditEventDetails(_event);
+
+            if (validate)
                 ShowSuccess("Event successfully modified");
-            }
+            else
+                ShowError("No selected item or invalid event data");
+
             ReloadWindow();
         }
 
@@ -130,7 +121,7 @@ namespace AgendaForms
         private void ReloadWindow()
         {
             dataGridViewUpdate.Rows.Clear();
-            AddEventsToTable();
+            AddDataToTable();
             dataGridViewUpdate.Update();
 
             UpdEventNameTextBox.ResetText();

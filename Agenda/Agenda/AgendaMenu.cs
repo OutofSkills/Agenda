@@ -13,8 +13,8 @@ namespace AgendaForms
 {
     public partial class AgendaMenu : Form
     {
-        private Form activeForm = null;
         Point lastPoint;
+        Form activeForm;
 
         /// <summary>
         /// Class Contructor
@@ -22,6 +22,7 @@ namespace AgendaForms
         public AgendaMenu()
         {
             InitializeComponent();
+            activeForm = null;
         }
         private void ExitButton_Click(object sender, EventArgs e)
         {

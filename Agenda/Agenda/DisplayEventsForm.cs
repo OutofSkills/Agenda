@@ -1,14 +1,15 @@
 ﻿using System;
-using DBDataAccess;
 using System.Windows.Forms;
 using System.Diagnostics;
 using AgendaErrors;
+using AgendaLogic;
 
 namespace AgendaForms
 {
     public partial class DisplayEventsForm : Form
     {
         ErrorForm errorForm;
+
         /// <summary>
         /// Form Constructor
         /// </summary>
@@ -23,7 +24,7 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-            CAgenda agenda = new CAgenda();
+            IAgenda agenda = new CAgenda();
             DateTime date = dateTimePicker.Value;
 
             string intervalChoice = GetUserChoice();

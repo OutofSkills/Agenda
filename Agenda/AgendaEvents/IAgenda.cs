@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace DBDataAccess
 {
-    public interface IAgenda
+    public interface IAgendaDB
     {
-        void CreateEvent(string name, DateTime date, DateTime time, string description);
-        void DeleteEvent(int id);
-        List<Event> GetEvents(DateTime date, string dayOrWeek);
-        void UpdateEvent(int id, string name, DateTime date, DateTime time, string description);
+        void AddRecordToDB(string name, DateTime date, DateTime time, string description);
+        void DeleteRecordFromDB(int id);
+        List<Event> GetRecordsFromDB(DateTime date, string dayOrWeek);
+        void UpdateRecord(int id, string name, DateTime date, DateTime time, string description);
     }
 }

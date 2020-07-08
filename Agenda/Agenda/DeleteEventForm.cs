@@ -1,4 +1,5 @@
 ﻿using AgendaErrors;
+using AgendaLogic;
 using DBDataAccess;
 using System;
 using System.Diagnostics;
@@ -8,9 +9,10 @@ namespace AgendaForms
 {
     public partial class DeleteEventForm : Form
     {
-        private int id;
+        private int selectedRowId;
         ErrorForm errorForm;
         SuccesWindow succesWindow;
+
         /// <summary>
         /// Class contructor
         /// </summary>
@@ -30,7 +32,7 @@ namespace AgendaForms
         /// <summary>
         /// Load the table with all events data
         /// </summary>
-        private void GridDisplayEvents()
+        private void AddDataToTable()
         {
             IAgenda agenda = new CAgenda();
             DisplayEventsForm displayEvents = new DisplayEventsForm();
@@ -65,7 +67,7 @@ namespace AgendaForms
                 DataGridViewRow row = this.dataGridViewDelete.Rows[e.RowIndex];
                 DateTime date = ConvertToDate(row.Cells["EventDate"].Value.ToString());
 
-                this.id = (int)row.Cells["EventID"].Value;
+                this.selectedRowId = (int)row.Cells["EventID"].Value;
                 DeleteNameTextBox.Text = row.Cells["EventName"].Value.ToString();
                 DeleteDatePicker.Value = date;
             }
@@ -80,22 +82,15 @@ namespace AgendaForms
         {
             IAgenda agenda = new CAgenda();
 
-            if (id == default)
+            if (selectedRowId == default)
                 ShowError("No selected item to delete");
             else
                 ShowSuccess("Event successfully deleted");
             
-            agenda.DeleteEvent(id);
+            agenda.RemoveEvent(selectedRowId);
             ReloadWindow();
         }
 
-        private void ShowSuccess(string v)
-        {
-            if(succesWindow == null)
-                succesWindow = new SuccesWindow();
-            succesWindow.SetSuccessLabel(v);
-            succesWindow.ShowDialog();
-        }
 
         #region Tools
         private void ShowError(string v)
@@ -107,6 +102,13 @@ namespace AgendaForms
             errorForm.setLabelText(v);
             errorForm.ShowDialog();
         }
+        private void ShowSuccess(string v)
+        {
+            if (succesWindow == null)
+                succesWindow = new SuccesWindow();
+            succesWindow.SetSuccessLabel(v);
+            succesWindow.ShowDialog();
+        }
         private DateTime ConvertToDate(string v)
         {
             return Convert.ToDateTime(v);
@@ -117,7 +119,7 @@ namespace AgendaForms
         private void ReloadWindow()
         {
             dataGridViewDelete.Rows.Clear();
-            GridDisplayEvents();
+            AddDataToTable();
             dataGridViewDelete.Update();
             DeleteNameTextBox.ResetText();
             DeleteDatePicker.Value = DateTimePicker.MinimumDateTime;

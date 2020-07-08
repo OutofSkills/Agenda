@@ -1,5 +1,6 @@
 ﻿using AgendaErrors;
 using AgendaEvents;
+using AgendaLogic;
 using DBDataAccess;
 using System;
 using System.Diagnostics;
@@ -9,10 +10,12 @@ namespace AgendaForms
 {
     public partial class CreateEventForm : Form
     {
+        CEvent _event;
         ErrorForm errorWindow;
         SuccesWindow succesWindow;
         public CreateEventForm()
         {
+            _event = new CEvent();
             InitializeComponent();
         }
 
@@ -31,19 +34,19 @@ namespace AgendaForms
         /// Will asign the data introduced by the user to the database handler method to save
         /// a new event
         /// </summary>
-        private void CreateNewEvent()
+        private void SetNewEventDetails()
         {
             IAgenda agenda = new CAgenda();
-            CEvent _event = new CEvent();
 
             _event.name = EventNameTextBox.Text;
             _event.date = DatePicker.Value;
             _event.time = TimePicker.Value;
             _event.description = DescriptionTextBox.Text;
 
-            if (_event.name != string.Empty && _event.date.Date >= DateTime.Now.Date)
+            bool validate = agenda.CreateNewEvent(_event);
+
+            if (validate)
             {
-                agenda.CreateEvent(_event.name, _event.date, _event.time, _event.description);
                 ShowSuccess("Event successfully created");
             }
             else
@@ -52,17 +55,9 @@ namespace AgendaForms
             ClearFields();
         }
 
-        private void ShowSuccess(string v)
-        {
-            if(succesWindow == null)
-                succesWindow = new SuccesWindow();
-            succesWindow.SetSuccessLabel(v);
-            succesWindow.ShowDialog();
-        }
-
         private void CreateButton_Click(object sender, EventArgs e)
         {
-            CreateNewEvent();
+            SetNewEventDetails();
         }
 
         #region Tools
@@ -78,6 +73,13 @@ namespace AgendaForms
             }
             errorWindow.setLabelText(v);
             errorWindow.ShowDialog();
+        }
+        private void ShowSuccess(string v)
+        {
+            if (succesWindow == null)
+                succesWindow = new SuccesWindow();
+            succesWindow.SetSuccessLabel(v);
+            succesWindow.ShowDialog();
         }
         private void InitializeTimePicker()
         {

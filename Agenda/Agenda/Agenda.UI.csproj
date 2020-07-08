@@ -66,7 +66,6 @@
     <Compile Include="AgendaMenu.Designer.cs">
       <DependentUpon>AgendaMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="CEvent.cs" />
     <Compile Include="CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +172,10 @@
     <ProjectReference Include="..\Agenda.Errors\Agenda.UI.Dialog.csproj">
       <Project>{A475F963-4EF6-49EA-BE28-8C90552C1ADA}</Project>
       <Name>Agenda.UI.Dialog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Agenda.Logic\Agenda.Logic.csproj">
+      <Project>{78e2f7e2-8236-46b4-906a-de90a8c6c32d}</Project>
+      <Name>Agenda.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\AgendaEvents\Agenda.DBDataAccess.csproj">
       <Project>{98e89e92-a168-4a72-ba9b-cf68d0ad2fbf}</Project>
