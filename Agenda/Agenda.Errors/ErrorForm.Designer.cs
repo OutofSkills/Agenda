@@ -32,8 +32,8 @@
             this.ErrorLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ExitButtonError = new System.Windows.Forms.Button();
             this.MinimizeButtonError = new System.Windows.Forms.Button();
+            this.ExitButtonError = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -43,7 +43,7 @@
             this.ErrorLabel.Font = new System.Drawing.Font("Bell MT", 25.8F, System.Drawing.FontStyle.Bold);
             this.ErrorLabel.Location = new System.Drawing.Point(139, 108);
             this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(158, 68);
+            this.ErrorLabel.Size = new System.Drawing.Size(158, 92);
             this.ErrorLabel.TabIndex = 0;
             this.ErrorLabel.Text = "Error";
             this.ErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,19 +69,6 @@
             this.panel1.Size = new System.Drawing.Size(450, 35);
             this.panel1.TabIndex = 2;
             // 
-            // ExitButtonError
-            // 
-            this.ExitButtonError.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ExitButtonError.Dock = System.Windows.Forms.DockStyle.Right;
-            this.ExitButtonError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
-            this.ExitButtonError.Location = new System.Drawing.Point(408, 0);
-            this.ExitButtonError.Name = "ExitButtonError";
-            this.ExitButtonError.Size = new System.Drawing.Size(42, 35);
-            this.ExitButtonError.TabIndex = 0;
-            this.ExitButtonError.Text = "X";
-            this.ExitButtonError.UseVisualStyleBackColor = false;
-            this.ExitButtonError.Click += new System.EventHandler(this.ExitButtonError_Click);
-            // 
             // MinimizeButtonError
             // 
             this.MinimizeButtonError.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -94,6 +81,19 @@
             this.MinimizeButtonError.Text = " -";
             this.MinimizeButtonError.UseVisualStyleBackColor = false;
             this.MinimizeButtonError.Click += new System.EventHandler(this.MinimizeButtonError_Click);
+            // 
+            // ExitButtonError
+            // 
+            this.ExitButtonError.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ExitButtonError.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitButtonError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.ExitButtonError.Location = new System.Drawing.Point(408, 0);
+            this.ExitButtonError.Name = "ExitButtonError";
+            this.ExitButtonError.Size = new System.Drawing.Size(42, 35);
+            this.ExitButtonError.TabIndex = 0;
+            this.ExitButtonError.Text = "X";
+            this.ExitButtonError.UseVisualStyleBackColor = false;
+            this.ExitButtonError.Click += new System.EventHandler(this.ExitButtonError_Click);
             // 
             // ErrorForm
             // 
