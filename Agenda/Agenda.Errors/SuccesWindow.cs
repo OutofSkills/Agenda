@@ -30,5 +30,21 @@ namespace AgendaErrors
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        Point lastPoint;
+
+        private void SuccesMovePanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void SuccesMovePanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+            }
+        }
     }
 }
