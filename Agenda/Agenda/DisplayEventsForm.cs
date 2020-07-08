@@ -8,8 +8,6 @@ namespace AgendaForms
 {
     public partial class DisplayEventsForm : Form
     {
-        ErrorForm errorForm;
-
         /// <summary>
         /// Form Constructor
         /// </summary>
@@ -48,7 +46,6 @@ namespace AgendaForms
                 }
         }
         
-
         #region Tools
         /// <summary>
         /// Tool used to refresh the grid table
@@ -65,6 +62,7 @@ namespace AgendaForms
         /// <returns></returns>
         private string GetUserChoice()
         {
+            DialogManager dialog = new DialogManager();
             string intervalChoice = string.Empty;
 
             if (DayRadioButton.Checked)
@@ -81,20 +79,10 @@ namespace AgendaForms
             }
             else
             {
-                ShowError("No display option selected");
+                dialog.ShowErrorWindow("No display option selected");
             }
 
             return intervalChoice;
-        }
-
-        private void ShowError(string v)
-        {
-            if (errorForm == null)
-            {
-                errorForm = new ErrorForm();
-            }
-            errorForm.setLabelText(v);
-            errorForm.ShowDialog();
         }
 
         public string ConvertDateFormat(DateTime date)

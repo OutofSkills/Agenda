@@ -1,6 +1,5 @@
 ﻿using AgendaErrors;
 using AgendaLogic;
-using DBDataAccess;
 using System;
 using System.Windows.Forms;
 
@@ -9,8 +8,6 @@ namespace AgendaForms
     public partial class UpdateEventForm : Form
     {
         CEvent _event;
-        ErrorForm errorForm;
-        SuccesWindow succesWindow;
         
         /// <summary>
         /// Class constructor
@@ -84,6 +81,7 @@ namespace AgendaForms
         /// <param name="e"></param>
         private void UpdateButton_Click(object sender, EventArgs e)
         {
+            DialogManager dialog = new DialogManager();
             IAgenda agenda = new CAgenda();
 
             _event.name = UpdEventNameTextBox.Text;
@@ -94,30 +92,14 @@ namespace AgendaForms
             bool validate = agenda.EditEventDetails(_event);
 
             if (validate)
-                ShowSuccess("Event successfully modified");
+                dialog.ShowSuccessWindow("Event successfully modified");
             else
-                ShowError("No selected item or invalid event data");
+                dialog.ShowErrorWindow("No selected item or invalid event data");
 
             ReloadWindow();
         }
 
         #region Tools
-        private void ShowSuccess(string v)
-        {
-            if (succesWindow == null)
-                succesWindow = new SuccesWindow();
-            succesWindow.SetSuccessLabel(v);
-            succesWindow.ShowDialog();
-        }
-        private void ShowError(string v)
-        {
-            if(errorForm == null)
-               errorForm = new ErrorForm();
-
-            errorForm.setLabelText(v);
-            errorForm.ShowDialog();
-        }
-
         private void ReloadWindow()
         {
             dataGridViewUpdate.Rows.Clear();

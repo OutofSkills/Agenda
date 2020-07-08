@@ -1,7 +1,5 @@
 ﻿using AgendaErrors;
-using AgendaEvents;
 using AgendaLogic;
-using DBDataAccess;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -11,8 +9,6 @@ namespace AgendaForms
     public partial class CreateEventForm : Form
     {
         CEvent _event;
-        ErrorForm errorWindow;
-        SuccesWindow succesWindow;
         public CreateEventForm()
         {
             _event = new CEvent();
@@ -37,6 +33,7 @@ namespace AgendaForms
         private void SetNewEventDetails()
         {
             IAgenda agenda = new CAgenda();
+            DialogManager dialog = new DialogManager();
 
             _event.name = EventNameTextBox.Text;
             _event.date = DatePicker.Value;
@@ -46,11 +43,9 @@ namespace AgendaForms
             bool validate = agenda.CreateNewEvent(_event);
 
             if (validate)
-            {
-                ShowSuccess("Event successfully created");
-            }
+                dialog.ShowSuccessWindow("Event successfully created");
             else
-                ShowError("Invalid provided event data");
+                dialog.ShowErrorWindow("Invalid provided event data");
 
             ClearFields();
         }
@@ -61,26 +56,6 @@ namespace AgendaForms
         }
 
         #region Tools
-        /// <summary>
-        /// Will open a window with an error text wether there is a error
-        /// </summary>
-        /// <param name="v"></param>
-        private void ShowError(string v)
-        {
-            if (errorWindow == null)
-            {
-                errorWindow = new ErrorForm();
-            }
-            errorWindow.setLabelText(v);
-            errorWindow.ShowDialog();
-        }
-        private void ShowSuccess(string v)
-        {
-            if (succesWindow == null)
-                succesWindow = new SuccesWindow();
-            succesWindow.SetSuccessLabel(v);
-            succesWindow.ShowDialog();
-        }
         private void InitializeTimePicker()
         {
             TimePicker.CustomFormat = "HH:mm";

@@ -1,6 +1,5 @@
 ﻿using AgendaErrors;
 using AgendaLogic;
-using DBDataAccess;
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -10,8 +9,6 @@ namespace AgendaForms
     public partial class DeleteEventForm : Form
     {
         private int selectedRowId;
-        ErrorForm errorForm;
-        SuccesWindow succesWindow;
 
         /// <summary>
         /// Class contructor
@@ -81,11 +78,12 @@ namespace AgendaForms
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             IAgenda agenda = new CAgenda();
+            DialogManager dialog = new DialogManager();
 
             if (selectedRowId == default)
-                ShowError("No selected item to delete");
+                dialog.ShowErrorWindow("No selected item to delete");
             else
-                ShowSuccess("Event successfully deleted");
+                dialog.ShowSuccessWindow("Event successfully deleted");
             
             agenda.RemoveEvent(selectedRowId);
             ReloadWindow();
@@ -93,22 +91,6 @@ namespace AgendaForms
 
 
         #region Tools
-        private void ShowError(string v)
-        {
-            if (errorForm == null)
-            {
-                errorForm = new ErrorForm();
-            }
-            errorForm.setLabelText(v);
-            errorForm.ShowDialog();
-        }
-        private void ShowSuccess(string v)
-        {
-            if (succesWindow == null)
-                succesWindow = new SuccesWindow();
-            succesWindow.SetSuccessLabel(v);
-            succesWindow.ShowDialog();
-        }
         private DateTime ConvertToDate(string v)
         {
             return Convert.ToDateTime(v);
@@ -124,7 +106,6 @@ namespace AgendaForms
             DeleteNameTextBox.ResetText();
             DeleteDatePicker.Value = DateTimePicker.MinimumDateTime;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
