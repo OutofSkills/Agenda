@@ -99,7 +99,7 @@ namespace AgendaForms
             _event.description = UpdDescriptionTextBox.Text;
 
             if (_event.name == string.Empty || _event.date == DateTimePicker.MinimumDateTime)
-                ShowError("No selected item to update or invalid introduced event data");
+                ShowError("No selected item or invalid event data");
             else if (_event.date.Date < DateTime.Now.Date)
                 ShowError("Invalid introduced date");
             else
