@@ -80,7 +80,7 @@ namespace AgendaForms
             }
             else
             {
-                ShowError("You have to choose events from a Day/Week/All");
+                ShowError("No display option selected");
             }
 
             return intervalChoice;
