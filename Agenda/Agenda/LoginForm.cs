@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using AgendaErrors;
 using Security;
 namespace AgendaForms
 {

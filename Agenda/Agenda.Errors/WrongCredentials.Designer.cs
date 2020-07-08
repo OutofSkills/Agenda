@@ -1,4 +1,4 @@
-﻿namespace AgendaForms
+﻿namespace AgendaErrors
 {
     partial class WrongCredentials
     {

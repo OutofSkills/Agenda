@@ -61,6 +61,12 @@
     <Compile Include="SuccesWindow.Designer.cs">
       <DependentUpon>SuccesWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="WrongCredentials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WrongCredentials.Designer.cs">
+      <DependentUpon>WrongCredentials.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ErrorForm.resx">
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SuccesWindow.resx">
       <DependentUpon>SuccesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WrongCredentials.resx">
+      <DependentUpon>WrongCredentials.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

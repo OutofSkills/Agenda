@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AgendaForms
+namespace AgendaErrors
 {
     public partial class WrongCredentials : Form
     {
