@@ -44,11 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DialogManager.cs" />
-    <Compile Include="ErrorForm.cs">
+    <Compile Include="ErrorWinow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ErrorForm.Designer.cs">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
+    <Compile Include="ErrorWinow.Designer.cs">
+      <DependentUpon>ErrorWinow.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -62,16 +62,16 @@
     <Compile Include="SuccesWindow.Designer.cs">
       <DependentUpon>SuccesWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="WrongCredentials.cs">
+    <Compile Include="WrongCredentialsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WrongCredentials.Designer.cs">
-      <DependentUpon>WrongCredentials.cs</DependentUpon>
+    <Compile Include="WrongCredentialsWindow.Designer.cs">
+      <DependentUpon>WrongCredentialsWindow.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ErrorForm.resx">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
+    <EmbeddedResource Include="ErrorWinow.resx">
+      <DependentUpon>ErrorWinow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,8 +80,8 @@
     <EmbeddedResource Include="SuccesWindow.resx">
       <DependentUpon>SuccesWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WrongCredentials.resx">
-      <DependentUpon>WrongCredentials.cs</DependentUpon>
+    <EmbeddedResource Include="WrongCredentialsWindow.resx">
+      <DependentUpon>WrongCredentialsWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
