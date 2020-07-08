@@ -8,6 +8,11 @@ namespace AgendaLogic
 {
     public class CAgenda : IAgenda
     {
+        /// <summary>
+        /// Will get a event data from the user and pass it to the database
+        /// </summary>
+        /// <param name="_event"></param>
+        /// <returns></returns>
         public bool CreateNewEvent(CEvent _event)
         {
             bool success = true;
@@ -21,11 +26,23 @@ namespace AgendaLogic
             else
                 return !success;
         }
+
+        /// <summary>
+        /// Will call the removing from database method for a given item
+        /// </summary>
+        /// <param name="eventID"></param>
         public void RemoveEvent(int eventID)
         {
             AgendaDB dB = new AgendaDB();
             dB.DeleteRecordFromDB(eventID);
         }
+
+        /// <summary>
+        /// Will get a list a list of events from the database data access method
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="choice"></param>
+        /// <returns></returns>
         public List<Event> GetEvents(DateTime date, string choice)
         {
             AgendaDB db = new AgendaDB();
@@ -33,6 +50,12 @@ namespace AgendaLogic
 
             return events;
         }
+
+        /// <summary>
+        /// Will pass a new event data to the database update method to update a event by an ID
+        /// </summary>
+        /// <param name="_event"></param>
+        /// <returns></returns>
         public bool EditEventDetails(CEvent _event)
         {
             bool success = true;
