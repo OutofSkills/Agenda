@@ -182,6 +182,7 @@
             // 
             this.MinimizeButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.MinimizeButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.MinimizeButton.Location = new System.Drawing.Point(778, 0);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(42, 35);
@@ -194,6 +195,7 @@
             // 
             this.ExitButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ExitButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.ExitButton.Location = new System.Drawing.Point(820, 0);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(42, 35);

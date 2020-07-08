@@ -25,5 +25,15 @@ namespace AgendaErrors
             if(error!=string.Empty)
             ErrorLabel.Text = error;
         }
+
+        private void ExitButtonError_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeButtonError_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

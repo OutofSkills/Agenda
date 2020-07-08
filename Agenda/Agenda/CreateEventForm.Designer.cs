@@ -105,15 +105,14 @@ namespace AgendaForms
             // 
             // DatePicker
             // 
-            this.DatePicker.Value = DateTimePicker.MinimumDateTime;
             this.DatePicker.Location = new System.Drawing.Point(425, 208);
             this.DatePicker.Name = "DatePicker";
             this.DatePicker.Size = new System.Drawing.Size(213, 22);
             this.DatePicker.TabIndex = 6;
+            this.DatePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // TimePicker
             // 
-            this.TimePicker.Value = DateTimePicker.MinimumDateTime;
             this.TimePicker.CustomFormat = " ";
             this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimePicker.Location = new System.Drawing.Point(425, 268);
@@ -121,6 +120,7 @@ namespace AgendaForms
             this.TimePicker.ShowUpDown = true;
             this.TimePicker.Size = new System.Drawing.Size(213, 22);
             this.TimePicker.TabIndex = 7;
+            this.TimePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // CreateButton
             // 

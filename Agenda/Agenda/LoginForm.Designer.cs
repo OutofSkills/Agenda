@@ -124,6 +124,7 @@
             // 
             this.MinimizeMenuButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.MinimizeMenuButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.MinimizeMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.MinimizeMenuButton.Location = new System.Drawing.Point(416, 0);
             this.MinimizeMenuButton.Name = "MinimizeMenuButton";
             this.MinimizeMenuButton.Size = new System.Drawing.Size(42, 35);
@@ -136,6 +137,7 @@
             // 
             this.ExitMenuButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ExitMenuButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.ExitMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
             this.ExitMenuButton.Location = new System.Drawing.Point(458, 0);
             this.ExitMenuButton.Name = "ExitMenuButton";
             this.ExitMenuButton.Size = new System.Drawing.Size(42, 35);

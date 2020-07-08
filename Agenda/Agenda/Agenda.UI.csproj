@@ -151,10 +151,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\account_image.png" />
+    <Content Include="Images\create.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\display.png" />
     <Content Include="Images\error.png" />
+    <Content Include="Images\errorX2.png" />
+    <Content Include="Images\event.png" />
+    <Content Include="Images\oLetter.png" />
     <Content Include="Images\Password.png" />
     <Content Include="Images\planner-text-notebook-pencil-agenda-planner-512.png" />
     <Content Include="Images\sign-in.png" />
+    <Content Include="Images\succes.png" />
+    <Content Include="Images\update2.png" />
     <Content Include="Images\user.png" />
     <Content Include="Images\whaat.png" />
   </ItemGroup>

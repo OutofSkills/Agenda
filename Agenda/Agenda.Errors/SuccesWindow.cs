@@ -20,5 +20,15 @@ namespace AgendaErrors
         {
             SuccessLabel.Text = v;
         }
+
+        private void ExitButtonSuccess_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizeButtonSuccess_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
